@@ -53,17 +53,18 @@
 % Benchmarking is very useful
 \begin{frame}
   \frametitle{Benchmarked performance}
+  Apply several sequencing technologies to the same sample(s). \\  
   Benchmark comparisons inform appropriate choice of sequencing technology%
 \footnote{\tiny{Miyamoto \textit{et al}. (2014) \textit{BMC Genomics} \textbf{15}:699 \href{http://dx.doi.org/10.1186/1471-2164-15-699}{doi:10.1186/1471-2164-15-699}}}$^{,}$%
 \footnote{\tiny{Salipante \textit{et al}. (2014) \textit{Appl. Environ. Micro.} \textbf{80}:7583-7591 \href{http://dx.doi.org/10.1128/AEM.02206-14}{doi:10.1128/AEM.02206-14}}}$^{,}$%
+\footnote{\tiny{Frey \textit{et al}. (2014) \textit{BMC Genomics} \textbf{15}:96 \href{http://dx.doi.org/10.1186/1471-2164-15-96}{doi:10.1186/1471-2164-15-96}}}$^{,}$%
 \footnote{\tiny{Koshimizu \textit{et al}. (2013) \textit{PLoS One} \textbf{8}:e74167 \href{http://dx.doi.org/10.1371/journal.pone.0074167}{doi:10.1371/journal.pone.0074167}}}$^{,}$%
 \footnote{\tiny{Quail \textit{et al}. (2012) \textit{BMC Genomics} \textbf{13}:341 \href{http://dx.doi.org/10.1186/1471-2164-13-341}{doi:10.1186/1471-2164-13-341}}}$^{,}$%
 \footnote{\tiny{Loman \textit{et al}. (2012) \textit{Nat. Biotech.} \textbf{30}:434-439 \href{http://dx.doi.org/10.1038/nbt.2198}{doi:10.1038/nbt.2198}}}$^{,}$%
-\footnote{\tiny{Lam \textit{et al}. (2011) \textit{Nat. Biotech.} \textbf{1} (6) \href{http://dx.doi.org/10.1038/nbt.2065}{doi:10.1038/nbt.2065}}} \\
-  Apply several sequencing technologies to the same sample(s). \\[0.5cm]
+\footnote{\tiny{Lam \textit{et al}. (2011) \textit{Nat. Biotech.} \textbf{1} (6) \href{http://dx.doi.org/10.1038/nbt.2065}{doi:10.1038/nbt.2065}}} \\[0.5cm]
   Progress in technologies is driving research very rapidly. \\
   Always look for most recent/relevant benchmarks. \\[0.5cm]
-  Bioinformatic methods also need to be benchmarked.
+  \textbf{Bioinformatic methods also need to be benchmarked.}
 \end{frame}
 
 % Benchmarking methods
@@ -71,9 +72,9 @@
   \frametitle{Benchmarking on \textit{Vibrio}\footnote{\tiny{Miyamoto \textit{et al}. (2014) \textit{BMC Genomics} \textbf{15}:699 \href{http://dx.doi.org/10.1186/1471-2164-15-699}{doi:10.1186/1471-2164-15-699}}}}
     \begin{itemize}
       \item Sequenced \textit{Vibrio parahaemolyticus} (2x chromosomes) with four technologies
-      \item Chose a sequencer for each and assembled reads
-      \item Used random subsets of reads, to determine required coverage (excess reads with Ion/MiSeq)
-      \item Aligned assemblies (MUMmer) to known high-quality chromosome sequence to measure error
+      \item Chose a sequencer for each tech, and assembled reads
+      \item Used random subsets of reads to determine required coverage (excess reads with Ion/MiSeq)
+      \item Aligned assemblies (MUMmer) to known high-quality chromosome sequence, to measure error
     \end{itemize}      
     \begin{center}
       \includegraphics[width=0.8\textwidth]{images/miyamoto_errors}
@@ -107,7 +108,7 @@
     \item PacBio generated single chromosome contigs
     \item Assembly of multiple-chromosome bacteria is currently feasible
   \end{itemize}  
-  And quite a bit of variability if everyone uses different methods (e.g. sequencing technology, assembler, parameter settings or pre-processing)$\ldots$
+  Appreciable variability as methods are not standardised (e.g. sequencing technology, assembler, parameter settings and pre-processing)$\ldots$
 \end{frame}
 
 % SUBSECTION: Nanopore
@@ -116,14 +117,15 @@
 
 % Nanopore
 \begin{frame}
-  \frametitle{What's next?}
-  Oxford Nanopore. Size of your hand.
+  \frametitle{What's coming next?}
+  Oxford Nanopore. A sequencer the size of your hand.
     \begin{center}
-      \includegraphics[width=0.5\textwidth]{images/minion_run}
+      \includegraphics[width=0.48\textwidth]{images/minion_run}\thinspace
+      \includegraphics[width=0.48\textwidth]{images/nanopore_schematic}
     \end{center} 
     \begin{itemize}
       \item Microfluidics, single-molecule sequencing; 11-70kbp reads
-      \item Reports current across pore as molecule moves through
+      \item Reports current across pore (tiny electron microscope) as molecule moves through
       \item \$10/Mbp, 110Mbp per flowcell\footnote{\tiny{Yaniv Erlich (2013) \href{http://erlichya.tumblr.com/post/66376172948/hands-on-experience-with-oxford-nanopore-minion}{Future Continuous blog}}}
     \end{itemize}          
 \end{frame}
@@ -144,12 +146,12 @@
 % Nanopore controversy: response
 \begin{frame}
   \frametitle{Controversy\footnote{\tiny{Mikheyev and Tin (2014) \textit{Mol. Ecol. Res.} \textbf{14}:1097-1102 \href{http://dx.doi.org/10.1111/1755-0998.12324}{doi:10.1111/1755-0998.12324}}}}
-  Not everyone thinks that paper is very good:
+  Not everyone thinks the Mikheyev and Tin paper is very good:
     \begin{center}
       \includegraphics[width=0.5\textwidth]{images/nanopore_tweet_1}
       \includegraphics[width=0.5\textwidth]{images/nanopore_tweet_2}      
     \end{center}           
-    \href{http://biomickwatson.wordpress.com/2014/09/07/thoughts-on-oxford-nanopores-minion-mobile-dna-sequencer/}{``But that paper is terrible. It's just lazy.''} (Mick Watson's blog)
+    \href{http://biomickwatson.wordpress.com/2014/09/07/thoughts-on-oxford-nanopores-minion-mobile-dna-sequencer/}{``But that paper is terrible. It's just lazy.''} (Mick Watson's blog: \href{http://biomickwatson.wordpress.com/2014/09/07/thoughts-on-oxford-nanopores-minion-mobile-dna-sequencer/}{http://biomickwatson.wordpress.com/2014/09/07/thoughts-on-oxford-nanopores-minion-mobile-dna-sequencer/})
 \end{frame}
 
 % Some better results
@@ -165,9 +167,34 @@
 % Summary of how fast the amount of sequence data is increasing
 \subsection{How fast is sequence data increasing?}
 
+% How many genomes do we have, now?
+\begin{frame}
+  \frametitle{After that, the flood$\ldots$}
+  High-throughput sequencing methods have completely changed the landscape of microbiology \\
+  \textbf{(Nearly) complete, (mainly) accurate sequence data is now inexpensive}
+  \begin{itemize}
+    \item many more genomes
+    \item \href{http://www.genomesonline.org/cgi-bin/GOLD/index.cgi?page_requested=Complete+Genome+Projects&subset_requested=Complete+And+Published}{GOLD} (19/2/2014): 3,011 ``finished'' ; 9,891 ``permanent draft'' genomes
+    \item \href{http://www.genomesonline.org/cgi-bin/GOLD/index.cgi?page_requested=Complete+Genome+Projects&subset_requested=Complete+And+Published}{GOLD} (18/11/2014): 6,649 ``finished'' ; 23,552 ``permanent draft'' genomes    
+    \item \href{http://www.ncbi.nlm.nih.gov/Traces/wgs/}{NCBI WGS} (19/2/2014): 17,023 microbial genomes
+    \item \href{http://www.ncbi.nlm.nih.gov/Traces/wgs/}{NCBI WGS} (18/11/2014): 26,026 micribial genomes
+  \end{itemize}
+\end{frame}
+
+% And how many are we going to have?
+\begin{frame}
+  \frametitle{Predicting the future is hard$\ldots$\footnote{\tiny{\href{http://sulab.org/2013/06/sequenced-genomes-per-year/}{http://sulab.org/2013/06/sequenced-genomes-per-year/}}}}
+    Su \textit{et al}. attempted to answer this:
+    \begin{center}
+      \includegraphics[width=0.5\textwidth]{images/cumulative_sequenced_genomes1}
+      \includegraphics[width=0.5\textwidth]{images/cumulative_sequenced_genomes2}
+    \end{center}     
+    How will we keep this much genomic data well-organised?
+\end{frame}
+
 % SUBSECTION: Genome sequence standard
 % Brief account of MIGS
-\subsection{Genome Sequence Standards}
+\subsection{Genome Sequence and Data Standards}
 
 % MIGS
 \begin{frame}
