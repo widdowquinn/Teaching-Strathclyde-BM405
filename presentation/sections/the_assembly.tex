@@ -12,7 +12,7 @@
 \begin{frame}
   \frametitle{In an ideal world}
   Ideally, you would have one sequence per chromosome/plasmid.\\
-  (and no errors)
+  (and no errors): a \textbf{closed/complete} genome.
   \begin{center}
     \includegraphics[width=0.5\textwidth]{images/pba_sequence}
     \includegraphics[width=0.5\textwidth]{images/complete_genome_circle}
@@ -23,7 +23,7 @@
 % What you get back in an ideal world
 \begin{frame}
   \frametitle{More realistically$\ldots$}
-  Typically, a number of assembled fragments (contigs) are returned in FASTA format.\\
+  Typically, a number of assembled fragments (contigs or scaffold) are returned in FASTA format: a \textbf{draft} genome.\\
   Around 250 contigs for a 5Mbp genome is usual with Illumina\\
   \begin{center}
     \includegraphics[width=0.5\textwidth]{images/circle_1}
@@ -34,8 +34,7 @@
 % Ordering fragments
 \begin{frame}
   \frametitle{Ordering contigs}
-  Contigs can be ordered correctly into \textit{scaffolds} if paired-end reads span gaps.\\
-  Typically done by the assembly software.
+  Contigs can be ordered correctly into \textit{scaffolds} if paired-end reads span gaps (typically done during assembly).
   \begin{center}
     \includegraphics[width=1\textwidth]{images/contig_order_pe}
   \end{center}    
