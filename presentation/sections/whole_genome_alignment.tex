@@ -5,7 +5,7 @@
 
 
 % SUBSECTION: Whole genome alignments
-\subsection{An Introduction to Whole Genome Alignment}
+\subsection{An Introduction to Pairwise Genome Alignment}
 
 % What do you align, and why?
 \begin{frame}
@@ -24,16 +24,80 @@
 % How do you align, and why?
 \begin{frame}
   \frametitle{How to align, and why?}
-  For useful analysis, the aligned genomes should:
+  Naive sequence aligners (Needleman-Wunsch, Smith-Waterman) are not appropriate for genome alignment
   \begin{itemize}
-    \item derive from a sufficiently recent common ancestor, so homologous regions can be identified
-    \item derive from a sufficiently distant common ancestor, so that there are ``interesting'' differences to be identified
-    \item \textbf{help to answer your biological question}: is your question organism or phenotype-specific? 
+    \item Computationally expensive on large sequences
+    \item Cannot handle rearrangements
   \end{itemize}
-  \begin{center}
-    \includegraphics[width=0.6\textwidth]{images/act_comparison}
-  \end{center}  
+  Very many alternative alignment algorithms proposed
+  \begin{itemize}
+    \item \textbf{megaBLAST} {\tiny\href{http://www.ncbi.nlm.nih.gov/blast/html/megablast.html}{http://www.ncbi.nlm.nih.gov/blast/html/megablast.html}}
+    \item \textbf{MUMmer} {\tiny\href{http://mummer.sourceforge.net/}{http://mummer.sourceforge.net/}}
+    \item BLAT {\tiny\href{http://genome.ucsc.edu/goldenPath/help/blatSpec.html}{http://genome.ucsc.edu/goldenPath/help/blatSpec.html}}
+    \item LASTZ {\tiny\href{http://www.bx.psu.edu/~rsharris/lastz/}{http://www.bx.psu.edu/~rsharris/lastz/}}
+    \item LAGAN {\tiny\href{http://lagan.stanford.edu/lagan_web/index.shtml}{http://lagan.stanford.edu/lagan\_web/index.shtml}}
+    \item and many, many more$\ldots$        
+  \end{itemize}
+  Example exercises in \url{data/whole_genome_alignment}.
 \end{frame}
+
+% megaBLAST
+\begin{frame}
+  \frametitle{megaBLAST}
+  Optimised for speed, over BLASTN\footnote{\tiny{\href{http://www.ncbi.nlm.nih.gov/blast/Why.shtml}{http://www.ncbi.nlm.nih.gov/blast/Why.shtml}}}
+  \begin{itemize}
+    \item Genome-level searches
+    \item Queries on large sequence sets
+    \item Long alignments of very similar sequence
+  \end{itemize}
+  Uses the greedy algorithm by Zhang \textit{et al.}\footnote{\tiny{\href{http://dx.doi.org/10.1089/10665270050081478}{Zhang \textit{et al}. (2000) \textit{J. Comp. Biol.} \textbf{7}:203-214 doi:10.1089/10665270050081478}}}, \textbf{not} BLAST algorithm.
+  \begin{itemize}
+    \item Concatenates queries (``query packing'') to improve performance
+    \item Two modes: \textbf{megaBLAST} and discontinuous (\textbf{dc-megablast}) for divergent sequences
+  \end{itemize}
+  BLASTN now uses the megaBLAST algorithm by default
+\end{frame}
+
+% MUMmer implements suffix trees
+\begin{frame}
+  \frametitle{MUMmer\footnote{\tiny{\href{http://dx.doi.org/10.1186/gb-2004-5-2-r12}{Kurtz \textit{et al}. (2004) \textit{Genome. Biol.} \textbf{5}:R12 doi:10.1186/gb-2004-5-2-r12}}}}
+  Uses \textit{suffix trees} for pattern matching: very fast even for large sequences
+  \begin{columns}[T]
+    \begin{column}{5cm}  
+      \begin{itemize}
+        \item Finds \textit{maximal exact matches}
+        \item Memory use depends only on the reference sequence size
+      \end{itemize}
+      Suffix trees: {\tiny(\href{http://en.wikipedia.org/wiki/Suffix_tree}{http://en.wikipedia.org/wiki/Suffix\_tree})}
+      \begin{itemize}
+        \item Can be built and searched in $O(n)$ time
+        \item But useful algorithms are nontrivial
+      \end{itemize}
+    \end{column}
+    \begin{column}{5cm}
+      \includegraphics[width=1\textwidth]{images/suffix_tree}
+    \end{column}
+  \end{columns}      
+\end{frame}
+
+% MUMmer algorithm
+\begin{frame}
+  \frametitle{The MUMmer algorithm\footnote{\tiny{\href{http://dx.doi.org/10.1186/gb-2004-5-2-r12}{Kurtz \textit{et al}. (2004) \textit{Genome. Biol.} \textbf{5}:R12 doi:10.1186/gb-2004-5-2-r12}}}}
+  \begin{enumerate}
+    \item Identify a non-overlapping subset of maximal exact matches: often \textit{Maximal Unique Matches (MUMs)}
+    \item Cluster into \textit{alignment anchors}
+    \item Extend between anchors to produce the final alignment
+  \end{enumerate}
+  This is the basis of a very flexible suite of programs that align different kinds of sequence: \texttt{mummer}, \texttt{nucmer}, \texttt{promer}
+  \begin{itemize}
+    \item nucleotide and (more sensitive) ``conceptual protein'' alignments
+    \item used for genome comparisons, assembly scaffolding, repeat detection, $\ldots$
+    \item the basis of other aligners/assemblers (e.g. Mugsy, AMOS)
+  \end{itemize}
+\end{frame}
+
+% SUBSECTION: Whole genome alignments
+\subsection{What About Multiple Genome Alignment?}
 
 
 % SUBSECTION: Average Nucleotide Identity
