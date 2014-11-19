@@ -27,7 +27,7 @@
   Main approaches:
   \begin{itemize}
     \item \textbf{Alignment}: Smith-Waterman mathematically guaranteed to be the best alignment available (e.g. BFAST, MOSAIK);  approximation to S-W (e.g. BLAST); ungapped or gapped alignment (e.g. MAQ, FAST, mrFAST, SOAP). Can be slow.
-    \item \textbf{Burrows-Wheeler Transform}: Makes permanent reusable index of the genome (e.g. Bowtie, BWA), can be extended to consider sequence probability (e.g. BWA-PSSM). Can be very fast.
+    \item \textbf{Burrows-Wheeler Transform}: Makes reusable index of the genome (e.g. Bowtie, BWA), can be extended to consider sequence probability (e.g. BWA-PSSM). Can be very fast.
   \end{itemize}
   Other tools may employ different algorithms, some designed to be parallelised on GPUs/FPGAs (e.g. NextGenMap, XpressAlign)
 \end{frame}
@@ -35,7 +35,7 @@
 % Graphical example of OLC
 \begin{frame}
   \frametitle{Visualising Read Mapping}
-  Several tools are available, e.g. Tablet\footnote{\tiny{\href{http://dx.doi.org/10.1093/bib/bbs012}{Milne \textit{et al}. (2013) \textit{Brief. Bioinf.} \textbf{14}:193-202 doi:10.1093/bib/bbs012}}}
+  Several tools available, e.g. Tablet (the best$\ldots$)\footnote{\tiny{\href{http://dx.doi.org/10.1093/bib/bbs012}{Milne \textit{et al}. (2013) \textit{Brief. Bioinf.} \textbf{14}:193-202 doi:10.1093/bib/bbs012}}}
   \begin{center}
     \includegraphics[height=0.65\textheight]{images/tablet1}
   \end{center}  

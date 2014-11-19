@@ -44,7 +44,7 @@ CGGTCTTGGGATAGATGGGTTGCAGGTTGCGGTAAAGCTCGGACTCCAGAGCGTCCAGGGTAGACTGGCTAATCTTCTGC
   \begin{enumerate}
     \item Header: sequence identifier and optional description, starts with ``@''
     \item Raw sequence (\texttt{[ACGTN]})
-    \item \textit{Optional} header, repeats line 1
+    \item \textit{Optional} header, repeats line 1, starts with ``+''
     \item Quality scores, numbers encoded as ASCII
   \end{enumerate}
 \end{frame}
@@ -63,7 +63,7 @@ CGGTCTTGGGATAGATGGGTTGCAGGTTGCGGTAAAGCTCGGACTCCAGAGCGTCCAGGGTAGACTGGCTAATCTTCTGC
 \begin{frame}[fragile]
   \frametitle{FASTQ encoding\footnote{\tiny{\href{http://dx.doi.org/10.1093/nar/gkp1137}{Cock \textit{et al}. (2009) \textit{Bioinformatics} \textbf{38}:1767-1771 doi:10.1093/nar/gkp1137}}}}
   Versions vary by sequencer and period. Most now settled on Sanger format. \\
-  Quality scores ($Q_{shred}$) offset to lie in the given range:
+  Quality scores ($Q_{phred}$) offset to lie in the given range:
   \begin{enumerate}
     \item \textbf{Sanger}: 33-126, used in SAM/BAM, and Illumina 1.8+
     \item \textbf{Illumina 1.0-1.2}: 59-126
