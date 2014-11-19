@@ -32,7 +32,7 @@
 \begin{frame}
   \frametitle{Overlap-Layout-Consensus}
   The oldest approach, typically used with smaller sets of fewer reads. \\[0.5cm]
-  Time consuming (all-vs-all comparisons), but offset with graph-based algorithms (e.g. SGA).\\[0.5cm]
+  Can be time consuming (all-vs-all comparisons), but offset with graph-based OLC algorithms (e.g. SGA).\\[0.5cm]
   \begin{itemize}
     \item Celera Assembler\footnote{\tiny{\href{http://wgs-assembler.sourceforge.net/}{http://wgs-assembler.sourceforge.net/}}}
     \item Newbler (the Roche/454 GS assembler)\footnote{\tiny{\href{http://www.454.com/products/analysis-software/}{http://www.454.com/products/analysis-software/}}}
@@ -66,6 +66,7 @@
   \frametitle{de Bruijn graph assembly}
   Fast, as it never computes overlaps.\\[0.5cm]
   Sensitive to sequencing errors, and repeats (graph bulges and whirls).\\[0.5cm]
+  Notable tools:
   \begin{itemize}
     \item Velvet\footnote{\tiny{\href{http://dx.doi.org/10.1101/gr.074492.107}{Zerbino and Birney (2008) \textit{Genome Res.} \textbf{18}:821-829 doi:10.1101/gr.074492.107}}}
     \item CLC Assembly Cell\footnote{\tiny{\href{http://www.clcbio.com/products/clc-assembly-cell/}{http://www.clcbio.com/products/clc-assembly-cell/}}}

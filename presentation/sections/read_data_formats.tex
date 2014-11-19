@@ -72,6 +72,28 @@ CGGTCTTGGGATAGATGGGTTGCAGGTTGCGGTAAAGCTCGGACTCCAGAGCGTCCAGGGTAGACTGGCTAATCTTCTGC
   $Q_{phred} = -10 \log_{10}e$, where $e$ is the estimated probability that a base call is incorrect.
 \end{frame}
 
+% Variation in quality: good reads
+\begin{frame}[fragile]
+  \frametitle{Quality Control}
+  The quality of basecalls varies along reads.\\
+  \begin{center}
+    \includegraphics[height=0.6\textheight]{images/per_base_quality}
+  \end{center}  
+  (real data from our \textit{E.coli} sequencing: good quality)
+\end{frame}
+
+% Variation in quality: bad reads
+\begin{frame}[fragile]
+  \frametitle{Quality Control}
+  Some datasets are better than others.\\
+  \begin{center}
+    \includegraphics[height=0.5\textheight]{images/fastqc}
+  \end{center}  
+  Reads can be trimmed, or discarded.\\
+  Including poor reads compromises assembly.
+\end{frame}
+
+
 % SUBSECTION: SAM/BAM/CRAM
 % A very brief summary of the SAM/BAM/CRAM formats
 \subsection{SAM/BAM/CRAM}
