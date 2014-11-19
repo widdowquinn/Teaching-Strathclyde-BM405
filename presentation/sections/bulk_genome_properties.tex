@@ -35,15 +35,15 @@
   \frametitle{Blobology\footnote{\tiny{\href{http://dx.doi.org/10.1007/s13199-012-0154-6}{Kumar and Blaxter \textit{et al}. (2011) \textit{Symbiosis} \textbf{3}:119-126 doi:10.1007/s13199-012-0154-6}}}}
   \begin{columns}[T]
     \begin{column}{5cm}
-      Sequencing samples may be contaminated or contain microbial symbionts.\\
-      Expect more host than symbiont/contaminant DNA\\
-      GC content and read coverage can be used to separate contigs, following assembly and mapping\\
-      \href{http://nematodes.org/bioinformatics/blobology/}{http://nematodes.org/bioinformatics/blobology/}
+      Sequencing samples may be contaminated or contain microbial symbionts.\\[0.2cm]
+      Expect more host than symbiont/contaminant DNA\\[0.2cm]
+      GC content and read coverage can be used to separate contigs, following assembly and mapping
     \end{column}
     \begin{column}{5cm}
       \includegraphics[width=1\textwidth]{images/blobology}
     \end{column}
   \end{columns}
+  \href{http://nematodes.org/bioinformatics/blobology/}{http://nematodes.org/bioinformatics/blobology/}
 \end{frame}
 
 % k-mers
@@ -52,7 +52,7 @@
      \begin{itemize}
        \item Nucleotides: \texttt{[ACGT]}
        \item Dinucleotides: \texttt{[AA|AC|AG|AT|CA|CC|$\ldots$]} (16 dimers)
-       \item Trinucleotides: 32 trimers
+       \item Trinucleotides: \texttt{[AAA|AAC|AAG|AAT|ACA|$\ldots$]} (64 trimers)
        \item $k$-mers: $4^k$ $k$-mers
      \end{itemize}
      (see example in \texttt{data/shiny})

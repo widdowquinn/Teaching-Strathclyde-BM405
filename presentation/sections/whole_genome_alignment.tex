@@ -34,7 +34,7 @@
     \item \textbf{megaBLAST} {\tiny\href{http://www.ncbi.nlm.nih.gov/blast/html/megablast.html}{http://www.ncbi.nlm.nih.gov/blast/html/megablast.html}}
     \item \textbf{MUMmer} {\tiny\href{http://mummer.sourceforge.net/}{http://mummer.sourceforge.net/}}
     \item BLAT {\tiny\href{http://genome.ucsc.edu/goldenPath/help/blatSpec.html}{http://genome.ucsc.edu/goldenPath/help/blatSpec.html}}
-    \item LASTZ {\tiny\href{http://www.bx.psu.edu/~rsharris/lastz/}{http://www.bx.psu.edu/~rsharris/lastz/}}
+    \item LASTZ {\tiny\href{http://www.bx.psu.edu/~rsharris/lastz/}{http://www.bx.psu.edu/$\sim$rsharris/lastz/}}
     \item LAGAN {\tiny\href{http://lagan.stanford.edu/lagan_web/index.shtml}{http://lagan.stanford.edu/lagan\_web/index.shtml}}
     \item and many, many more$\ldots$        
   \end{itemize}
@@ -96,6 +96,63 @@
   \end{itemize}
 \end{frame}
 
+% SUBSECTION: Average Nucleotide Identity
+\subsection{Ordering Draft Genomes By Alignment}
+
+% Multiple genome alignment
+\begin{frame}
+  \frametitle{Multiple genome alignment is hard}
+  Really, really hard.\\[0.2cm]
+  Analogous to problems with multiple sequence alignment (three or more sequences).
+  \begin{itemize}
+    \item Computationally extremely expensive ($O(L^n)$, $L$=length of sequence, $n$=number of sequences) 
+    \item NP-complete problem: no known efficient way to find a solution
+  \end{itemize}
+  Heuristic (approximate) methods are used, most commonly:
+  \begin{itemize}
+    \item Progressive alignment
+    \item Iterative alignment
+  \end{itemize}
+\end{frame}
+
+% Mauve
+\begin{frame}
+  \frametitle{Mauve\footnote{\tiny{\href{http://dx.doi.org/10.1101/gr.2289704}{Darling \textit{et al}. (2004) \textit{Genome Res.} \textbf{14}:1394-1403 doi:10.1101/gr.2289704}}}}
+  Progressive alignment tool, with a GUI. Application to 9 enterobacteria shows rearrangement of homologous backbone.
+  \begin{center}
+    \includegraphics[height=0.46\textheight]{images/mauve_entero}
+  \end{center}        
+  Alternatives include MLAGAN\footnote{\tiny{\href{http://dx.doi.org/10.1101/gr.926603}{Brudno \textit{et al}. (2003) \textit{Genome Res.} \textbf{13}:721-731 doi:10.1101/gr.926603}}} and MUMmer\footnote{\tiny{\href{http://dx.doi.org/10.1186/gb-2004-5-2-r12}{Kurtz \textit{et al}. (2004) \textit{Genome Biol.} \textbf{5}:R12 doi:10.1186/gb-2004-5-2-r12}}}
+\end{frame}
+
+% The Mauve algorithm
+\begin{frame}
+  \frametitle{Mauve algorithm\footnote{\tiny{\href{http://dx.doi.org/10.1101/gr.2289704}{Darling \textit{et al}. (2004) \textit{Genome Res.} \textbf{14}:1394-1403 doi:10.1101/gr.2289704}}}}
+  \begin{columns}[T]
+    \begin{column}{5cm}
+      \begin{enumerate}
+        \item Find local alignments (\textit{multi-MUMs})
+        \item Build guide tree from multi-MUMs
+        \item Select subset of multi-MUMs as anchors, and partition into Local Collinear Blocks (LCBs): consistently ordered subsets
+        \item Progressive alignment against guide tree
+      \end{enumerate}
+    \end{column}
+    \begin{column}{5cm}
+      \includegraphics[width=1\textwidth]{images/mauve_algorithm}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% Reordering contigs
+\begin{frame}
+  \frametitle{Reordering contigs\footnote{\tiny{\href{http://dx.doi.org/10.1101/gr.2289704}{Darling \textit{et al}. (2004) \textit{Genome Res.} \textbf{14}:1394-1403 doi:10.1101/gr.2289704}}}}
+  Mauve also enables draft genome reordering.\\
+  Once LCBs are identified, can apply Mauve Contig Mover to reorder contigs
+  \begin{center}
+    \includegraphics[width=0.9\textwidth]{images/mauve_dickeya}
+  \end{center}    
+  Example exercise in \url{data/whole_genome_alignment}
+\end{frame}
 
 % SUBSECTION: Average Nucleotide Identity
 \subsection{Average Nucleotide Identity}
@@ -108,8 +165,8 @@
       \begin{itemize}
         \item Denature DNA from two organisms.
         \item Allow to anneal. Reassociation $\approx$ similarity, measured as $\Delta T$  of denaturation curves.
-        \item Proxy for sequence similarity.
         \item ``Gold Standard'' for prokaryotic taxonomy, since 1960s. ``70\% identity $\approx$ same species.''
+        \item Proxy for sequence similarity - replace with alignment?
       \end{itemize}
     \end{column}
     \begin{column}{5cm}
