@@ -46,22 +46,29 @@
   \end{columns}
 \end{frame}
 
-% Blobology
+% k-mers
+\begin{frame}
+  \frametitle{$k$-mers}
+     \begin{itemize}
+       \item Nucleotides: \texttt{[ACGT]}
+       \item Dinucleotides: \texttt{[AA|AC|AG|AT|CA|CC|$\ldots$]} (16 dimers)
+       \item Trinucleotides: 32 trimers
+       \item $k$-mers: $4^k$ $k$-mers
+     \end{itemize}
+     (see example in \texttt{data/shiny})
+\end{frame}
+
+% k-mer figures
 \begin{frame}
   \frametitle{$k$-mers}
   \begin{columns}[T]
     \begin{column}{5cm}
-      \begin{itemize}
-        \item Nucleotides: \texttt{[ACGT]}
-        \item Diucleotides: \texttt{[AA|AC|AG|AT|CA|CC|$\ldots$]} (16 dimers)
-        \item Trinucleotides: 32 trimers
-        \item $k$-mers: $4^k$ $k$-mers
-      \end{itemize}
-      (see example in \texttt{data/shiny})
+    \textit{E.coli}\\
+     \includegraphics[width=1\textwidth]{images/kmer_ecoli}\\
     \end{column}
-    \begin{column}{5cm}
-     \includegraphics[height=0.3\textheight]{images/kmer_ecoli}\\
-     \includegraphics[height=0.3\textheight]{images/kmer_mycoplasma}\\
+    \begin{column}{5cm}     
+     \textit{Mycoplasma} spp.
+     \includegraphics[width=1\textwidth]{images/kmer_mycoplasma}\\
    \end{column}
   \end{columns}
 \end{frame}
