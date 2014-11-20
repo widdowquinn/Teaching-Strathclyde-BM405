@@ -10,7 +10,7 @@
 % What do you align, and why?
 \begin{frame}
   \frametitle{What to align, and why?}
-  For useful analysis, the aligned genomes should:
+  To be useful, aligned genomes should:
   \begin{itemize}
     \item derive from a sufficiently recent common ancestor, so homologous regions can be identified
     \item derive from a sufficiently distant common ancestor, so that there are ``interesting'' differences to be identified
@@ -58,6 +58,25 @@
   BLASTN now uses the megaBLAST algorithm by default
 \end{frame}
 
+% BLAST vs megaBLAST
+\begin{frame}
+  \frametitle{BLAST vs megaBLAST}
+  megaBLAST is faster, but does it matter for biology?\\[0.2cm]
+  BLAST (top) and megaBLAST (bottom) pairwise comparisons:
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{images/act_wgs6}
+  \end{center}    
+\end{frame}
+
+% BLAST vs megaBLAST
+\begin{frame}
+  \frametitle{BLAST vs megaBLAST}
+  Filter out weak matches - not quite identical:
+  \begin{center}
+    \includegraphics[width=0.9\textwidth]{images/act_wgs7}
+  \end{center}    
+\end{frame}
+
 % MUMmer implements suffix trees
 \begin{frame}
   \frametitle{MUMmer\footnote{\tiny{\href{http://dx.doi.org/10.1186/gb-2004-5-2-r12}{Kurtz \textit{et al}. (2004) \textit{Genome. Biol.} \textbf{5}:R12 doi:10.1186/gb-2004-5-2-r12}}}}
@@ -96,6 +115,25 @@
   \end{itemize}
 \end{frame}
 
+% MUMmer vs megaBLAST
+\begin{frame}
+  \frametitle{MUMmer vs megaBLAST}
+  MUMmer identifies fewer weak matches\\[0.2cm]
+  megaBLAST (top) and MUMmer (bottom) pairwise comparisons:
+  \begin{center}
+    \includegraphics[width=0.9\textwidth]{images/act_wgs9}
+  \end{center}    
+\end{frame}
+
+% BLAST vs megaBLAST
+\begin{frame}
+  \frametitle{MUMmer vs megaBLAST}
+  Filter out weak BLAST matches - not quite identical:
+  \begin{center}
+    \includegraphics[width=0.9\textwidth]{images/act_wgs10}
+  \end{center}    
+\end{frame}
+
 % SUBSECTION: Average Nucleotide Identity
 \subsection{Ordering Draft Genomes By Alignment}
 
@@ -118,7 +156,7 @@
 % Mauve
 \begin{frame}
   \frametitle{Mauve\footnote{\tiny{\href{http://dx.doi.org/10.1101/gr.2289704}{Darling \textit{et al}. (2004) \textit{Genome Res.} \textbf{14}:1394-1403 doi:10.1101/gr.2289704}}}}
-  Progressive alignment tool, with a GUI. Application to 9 enterobacteria shows rearrangement of homologous backbone.
+  Progressive alignment tool, with a GUI. Application to nine enterobacteria: rearrangement of homologous backbone.
   \begin{center}
     \includegraphics[height=0.46\textheight]{images/mauve_entero}
   \end{center}        
@@ -199,7 +237,7 @@
   \frametitle{Average Nucleotide Identity (ANIm)\footnote{\tiny{\href{http://dx.doi.org/10.1073/pnas.0906412106}{Richter and Rossello-Mora (2009) \textit{Proc. Natl. Acad. Sci. USA} \textbf{106}:19126-19131 doi:10.1073/pnas.0906412106}}}}
   \begin{columns}[T]
     \begin{column}{3cm}
-      1. Align genomes with MUMmer\\
+      1. Align genomes (MUMmer)\\
       2. \textbf{ANIm}: Mean \% identity of all matches\\[0.25cm]
       \begin{itemize}
         \item DDH:ANIm linear
@@ -231,7 +269,7 @@
       \includegraphics[width=1\textwidth]{images/TETRA}
     \end{column}
   \end{columns}       
-  ANIb discards information, relative to ANIm\\
+  ANIb discards information, relative to ANIm: less sensitive\\
   ANIb/ANIm $\approx$ evolutionary history; TETRA $\approx$ bulk composition
 \end{frame}
 
