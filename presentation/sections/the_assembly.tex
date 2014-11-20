@@ -23,7 +23,7 @@
 % What you get back in an ideal world
 \begin{frame}
   \frametitle{More realistically$\ldots$}
-  Typically, a number of assembled fragments (contigs or scaffold) are returned in FASTA format: a \textbf{draft} genome.\\
+  Typically, a number of assembled fragments (contigs or scaffold) are returned in FASTA format: a \textbf{draft}, \textit{disordered} genome.\\
   Around 250 contigs for a 5Mbp genome is usual with Illumina\\
   \begin{center}
     \includegraphics[width=0.5\textwidth]{images/circle_1}
@@ -34,7 +34,8 @@
 % Ordering fragments
 \begin{frame}
   \frametitle{Ordering contigs}
-  Contigs can be ordered correctly into \textit{scaffolds} if paired-end reads span gaps (typically done during assembly).
+  Contigs can be ordered correctly into \textit{scaffolds} if paired-end reads span gaps (typically done during assembly).\\
+  Gaps are usually filled with \texttt{N}s (length estimated)
   \begin{center}
     \includegraphics[width=1\textwidth]{images/contig_order_pe}
   \end{center}    

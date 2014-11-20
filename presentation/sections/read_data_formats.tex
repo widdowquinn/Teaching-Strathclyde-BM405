@@ -6,11 +6,11 @@
 
 % The two main current sequence read data formats
 \begin{frame}
-  \frametitle{What do you get from sequencing\footnote{\tiny{Miyamoto \textit{et al}. (2014) \textit{BMC Genomics} \textbf{15}:699 \href{http://dx.doi.org/10.1186/1471-2164-15-699}{doi:10.1186/1471-2164-15-699}}}}
-  Sequence reads. Lots of them. \\
-  Size/number depend on technology used.
+  \frametitle{What do you get from sequencing}
+  Sequence reads. Usually lots of them. \\
+  Size/number/errors depend on technology used.
     \begin{center}
-      \includegraphics[height=0.7\textheight]{images/miyamoto_table}
+      \includegraphics[height=0.6\textheight]{images/miyamoto_table}\footnote{\tiny{Miyamoto \textit{et al}. (2014) \textit{BMC Genomics} \textbf{15}:699 \href{http://dx.doi.org/10.1186/1471-2164-15-699}{doi:10.1186/1471-2164-15-699}}}
     \end{center}   
 \end{frame}
 
@@ -45,7 +45,8 @@ CGGTCTTGGGATAGATGGGTTGCAGGTTGCGGTAAAGCTCGGACTCCAGAGCGTCCAGGGTAGACTGGCTAATCTTCTGC
     \item Header: sequence identifier and optional description, starts with ``@''
     \item Raw sequence (\texttt{[ACGTN]})
     \item \textit{Optional} header, repeats line 1, starts with ``+''
-    \item Quality scores, numbers encoded as ASCII
+    \item Quality scores, numbers encoded as ASCII\\
+             $Q_{phred} = -10 \log_{10}e$, where $e$ is the estimated probability that a base call is incorrect (like a pH).
   \end{enumerate}
 \end{frame}
 
@@ -69,13 +70,13 @@ CGGTCTTGGGATAGATGGGTTGCAGGTTGCGGTAAAGCTCGGACTCCAGAGCGTCCAGGGTAGACTGGCTAATCTTCTGC
     \item \textbf{Illumina 1.0-1.2}: 59-126
     \item \textbf{Illumina 1.3-1.8}: 64-126
   \end{enumerate}
-  $Q_{phred} = -10 \log_{10}e$, where $e$ is the estimated probability that a base call is incorrect.
+  \textbf{Knowing where your data comes from, and the data format and version, is always important.}
 \end{frame}
 
 % Variation in quality: good reads
 \begin{frame}[fragile]
   \frametitle{Quality Control}
-  The quality of basecalls varies along reads.\\
+  The quality of basecalls (error rate) varies between and along reads.\\
   \begin{center}
     \includegraphics[height=0.6\textheight]{images/per_base_quality}
   \end{center}  
@@ -114,15 +115,34 @@ CGGTCTTGGGATAGATGGGTTGCAGGTTGCGGTAAAGCTCGGACTCCAGAGCGTCCAGGGTAGACTGGCTAATCTTCTGC
 % BAM data format
 \begin{frame}[fragile]
   \frametitle{BAM\footnote{\tiny{\href{http://samtools.github.io/hts-specs/SAMv1.pdf}{https://github.com/samtools/hts-specs}}}/CRAM\footnote{\tiny{\href{http://www.ebi.ac.uk/ena/software/cram-toolkit}{http://www.ebi.ac.uk/ena/software/cram-toolkit}}}}
-  BAM is a compressed version of SAM.\\
+  \textbf{BAM} is a compressed version of SAM.\\
   \begin{itemize}
     \item BGZF compression.
     \item Random access within compressed file, through indexing.
   \end{itemize}
-  CRAM format may come to dominate, especially in archives, as datasets get larger:
+  \textbf{CRAM} format may come to dominate, especially in archives, as datasets get larger:
   \begin{itemize}
     \item Reference-based compression.\footnote{\tiny{\href{http://dx.doi.org/10.1101/gr.114819.110}{Fritz \textit{et al}. (2011) \textit{Genome Res.} \textbf{21}:734-740 doi:10.1101/gr.114819.110}}}
     \item Highly suited to compression and archiving of \textit{very} large amounts of sequence data.\footnote{\tiny{\href{http://dx.doi.org/10.1186/2047-217X-1-2}{Cochrane \textit{et al}. (2012) \textit{GigaScience} \textbf{1}:2 doi:10.1186/2047-217X-1-2}}}
   \end{itemize}  
 \end{frame}
+
+% SUBSECTION: Repositories
+% A very brief summary of read repositories
+\subsection{Repositories}
+
+% SAM data format
+\begin{frame}[fragile]
+  \frametitle{Read repositories}
+  Repositories are centrally-maintained locations that keep sequence read data from multiple projects\\
+  Submission to a repository is a requirement for publication.
+    \begin{itemize}
+    \item \textbf{ENA}: The European Nucleotide Archive (\href{http://www.ebi.ac.uk/ena}{http://www.ebi.ac.uk/ena}), maintained by EBI/EMBL
+    \item \textbf{SRA}: The Short Read Archive (\href{http://www.ncbi.nlm.nih.gov/sra}{http://www.ncbi.nlm.nih.gov/sra}), maintained in the US by NCBI
+  \end{itemize}
+  \begin{center}
+    \includegraphics[width=0.3\textwidth]{images/ENA-logo}
+  \end{center}    
+\end{frame}
+
 

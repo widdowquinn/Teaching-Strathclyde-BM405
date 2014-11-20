@@ -8,6 +8,7 @@
 % The two main approaches to sequence assembly
 \begin{frame}
   \frametitle{Sequence Assembly}
+  Once you have reads, you can assemble a genome.\\[0.25cm]
   Two main approaches to read assembly:
   \begin{itemize}
     \item \textbf{Overlap-Layout-Consensus}: Typically used with smaller sets of longer reads (e.g. 454, PacBio, Ion, Nanopore)
@@ -53,19 +54,35 @@
   \end{center}  
 \end{frame}
 
+% Genome graphs vs read graphs
 \begin{frame}
   \frametitle{de Bruijn graph assembly}
-  $k$-mer based graph\footnote{\tiny{\href{http://dx.doi.org/10.1101/gr.079053.108}{Chaisson \textit{et al}. (2009) \textit{Genome Res.} \textbf{19}:336-346 doi:10.1101/gr.079053.108}}}
+  $k$-mer based genome and read graphs\footnote{\tiny{\href{http://dx.doi.org/10.1101/gr.079053.108}{Chaisson \textit{et al}. (2009) \textit{Genome Res.} \textbf{19}:336-346 doi:10.1101/gr.079053.108}}}\\
+  ``True'' edges = genome; ``Error'' edges = wrong assembly
   \begin{center}
     \includegraphics[width=1\textwidth]{images/de_bruijn_repeats}
   \end{center}  
 \end{frame}
 
-% What tools use OLC, for which technologies
+% The effect of errors
+\begin{frame}
+  \frametitle{de Bruijn graph assembly}
+  All sequencing technologies have basecall errors.
+  \begin{itemize}
+    \item The proportion of errors is approximately constant per read
+    \item The more reads you have, the more errors there are
+  \end{itemize}
+  Increased coverage does not ensure increased accuracy\footnote{\tiny{\href{http://dx.doi.org/10.1093/bioinformatics/btq697}{Conway and Bromage (2011) \textit{Bioinformatics} \textbf{27}:479-486 doi:10.1093/bioinformatics/btq697}}}
+  \begin{center}
+    \includegraphics[width=0.6\textwidth]{images/de_bruijn_errors}
+  \end{center}   
+\end{frame}
+
+% de Bruijn graph assemblers
 \begin{frame}
   \frametitle{de Bruijn graph assembly}
   Fast, as it never computes overlaps.\\[0.5cm]
-  Sensitive to sequencing errors, and repeats (graph bulges and whirls).\\[0.5cm]
+  Sensitive to sequencing errors, resolves short repeats (graph bulges and whirls).\\[0.5cm]
   Notable tools:
   \begin{itemize}
     \item Velvet\footnote{\tiny{\href{http://dx.doi.org/10.1101/gr.074492.107}{Zerbino and Birney (2008) \textit{Genome Res.} \textbf{18}:821-829 doi:10.1101/gr.074492.107}}}
@@ -77,9 +94,10 @@
 % Graphical example of what else de Bruijn graphs can tell us
 \begin{frame}
   \frametitle{``Coloured'' de Bruijn graph assemblies}
-  Cortex\footnote{\tiny{\href{http://dx.doi.org/10.1038/ng.1028}{Iqbal \textit{et al}. (2012) \textit{Nat. Genet.} \textbf{44}:226-232 doi:10.1038/ng.1028}}} allows for on-the-fly identification of complex variation, and genotyping, by tracking ``coloured'' edges in the graph.
+  Cortex\footnote{\tiny{\href{http://dx.doi.org/10.1038/ng.1028}{Iqbal \textit{et al}. (2012) \textit{Nat. Genet.} \textbf{44}:226-232 doi:10.1038/ng.1028}}} allows for on-the-fly identification of complex variation, and genotyping, by tracking ``coloured'' edges in the graph.\\
+  Colours $\approx$ different isolates/organisms (e.g. a reference)
   \begin{center}
-    \includegraphics[width=0.8\textwidth]{images/cortex_uses}
+    \includegraphics[width=0.7\textwidth]{images/cortex_uses}
   \end{center}  
 \end{frame}
 
