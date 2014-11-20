@@ -1,0 +1,125 @@
+%% assessing_gene_prediction.tex
+%% Author: Leighton Pritchard
+%% Copyright: James Hutton Institute
+%% A brief description of gene prediction, as an illustrative example
+
+% SUBSECTION: Assessing Prediction Methods
+\subsection{Assessing Prediction Methods}
+
+% Method validation
+\begin{frame}
+  \frametitle{Using a ``Gold Standard'': validation\footnote{\tiny{\href{http://dx.doi.org/10.1007/978-1-62703-986-4_4}{Pritchard and Broadhurst (2014) \textit{Methods Mol. Biol.} \textbf{1127}:53-64 doi:10.1007/978-1-62703-986-4\_4}}}}
+  A general approach for \emph{all} predictive methods
+  \begin{itemize}
+    \item Define a known, ``correct'' set of true/false, positive/negative etc. examples - the ``gold standard''
+    \item Evaluate your predictive method against that set for
+    \begin{itemize}
+      \item sensitivity, specificity, accuracy, precision, etc.
+    \end{itemize}
+  \end{itemize}
+  This ought to be done by the method developers, but often wise to evaluate in your own system.\\[0.1cm]
+  Many methods available, coverage beyond the scope of this introduction
+\end{frame}
+
+% Contingency tables and performance metrics
+\begin{frame}
+  \frametitle{Contingency Tables}
+  \begin{center}
+     \begin{tabular}{cc|c|c|}
+	  \cline{3-4}
+		& & \multicolumn{2}{|c|}{Condition (Gold standard)}\\
+	  \cline{3-4}
+		& & True & False \\
+	  \hline
+	  \multicolumn{1}{ |c| }{\multirow{2}{*}{Test outcome}}& 
+	  %\multicolumn{1}{ |c| }{Positive} & True Positive \cellcolor{green} & 
+	  %  False Positive\cellcolor{red}\\
+	  \multicolumn{1}{ |c| }{Positive} & True Positive  & 
+	    False Positive\\
+	  \cline{2-4}
+	  \multicolumn{1}{ |c| }{} & \multicolumn{1}{ |c| }{Negative} & 
+	    %False Negative\cellcolor{red} & True Negative \cellcolor{green}\\
+	    False Negative & True Negative \\
+	  \hline
+    \end{tabular}
+  \end{center}
+  \textbf{Performance Metrics}\\
+  Sensitivity = TPR = $TP/(TP + FN)$ \\
+  Specificity = TNR = $TN/(FP + TN)$ \\
+  FPR = $1-\text{Specificity} = FP/(FP + TN)$ \\[0.1cm]
+  \textbf{If you don't have this information, you can't interpret predictive results properly.}
+\end{frame}
+
+% Testing CDS prediction on gold standards
+\begin{frame}
+  \frametitle{``Gold Standard'' results}
+  \begin{itemize}
+    \item Tested \texttt{glimmer}\footnote{\tiny{\href{http://dx.doi.org/10.1093/bioinformatics/btm009}{Delcher \textit{et al}. (2007) \textit{Bioinformatics} \textbf{23}:673-679 doi:10.1093/bioinformatics/btm009}}} and \texttt{prodigal}\footnote{\tiny{\href{http://dx.doi.org/10.1186/1471-2105-11-119}{Hyatt \textit{et al}. (2010) \textit{BMC Bioinf.} \textbf{11}:119 doi:10.1186/1471-2105-11-119}}} on two enterobacterial close relatives as "gold standards"
+    \begin{itemize}
+      \item Manually annotated ($>$3 expert person years)
+      \item Community-annotated (many research groups, interested in their own subset of genes)
+    \end{itemize}
+    \item \textbf{Both methods trained directly on the annotated genes in each organism!}
+  \end{itemize} 
+\end{frame}
+
+% Test on manually annotated set
+\begin{frame}
+  \frametitle{``Gold Standard'' results}
+  \textbf{Manually annotated}: 4550 CDS
+  \begin{center}
+    \begin{tabular}{r|l|l}
+	  genecaller & \texttt{glimmer} & \texttt{prodigal}  \\
+	  \hline
+	  predicted & 4752    & 4287  \\
+	  missed & \textbf{284} (6\%)   & 407 (9\%)  \\
+	  \hline
+	  \emph{Exact Prediction} & & \\
+  	  sensitivity   & 62\%   & \textbf{71}\%  \\
+  	  FDR   & 41\%   & \textbf{25}\%  \\  
+	  PPV   & 59\% & \textbf{75}\%  \\  
+	  \hline
+	  \emph{Correct ORF} & & \\
+  	  sensitivity   & \textbf{94}\%   & 91\% \\
+  	  FDR   & 10\%  & \textbf{3}\% \\  
+	  PPV   & 90\% & \textbf{97}\%  \\  
+    \end{tabular}
+  \end{center}     
+\end{frame}
+
+% Test on community annotated set
+\begin{frame}
+  \frametitle{``Gold Standard'' results}
+  \textbf{Community annotated}: 4475 CDS
+  \begin{center}
+	\begin{tabular}{r|l|l}
+	  genecaller & \texttt{glimmer} & \texttt{prodigal}  \\
+	  \hline
+	  predicted & 4679    & 4467  \\
+	  missed & \textbf{112} (3\%)   & 156 (3\%)  \\
+	  \hline
+	  \emph{Exact Prediction} & & \\
+  	  sensitivity   & 62\%   & \textbf{86}\%  \\
+  	  FDR   & 31\%   & \textbf{14}\%  \\  
+	  PPV   & 69\% & \textbf{86}\%  \\  
+	  \hline
+	  \emph{Correct ORF} & & \\
+  	  sensitivity   & \textbf{97}\%   & \textbf{97}\% \\
+  	  FDR   & 7\%  & \textbf{3}\% \\  
+	  PPV   & 93\% & \textbf{97}\%  \\  
+	\end{tabular}
+  \end{center}     
+\end{frame}
+
+% Conclusions from these comparisons
+\begin{frame}
+   \frametitle{Gene/CDS Prediction}   
+   \framesubtitle{Lessons learned}   
+   \begin{itemize}
+     \item Alternative CDS (and all other) prediction methods are unlikely to give identical results, or perform equally well
+     \item \textbf{There is No Free Lunch} (this is a theorem: \href{http://en.wikipedia.org/wiki/No_free_lunch_theorem}{http://en.wikipedia.org/wiki/No\_free\_lunch\_theorem})
+     \item To assess/choose between methods, performance metrics are required
+     \item Even on (relatively simple) prokaryotes, current best methods for CDS prediction are imperfect
+     \item Manual assessment and intervention is essential, and usually the most demanding and time-consuming part of the process
+   \end{itemize}
+\end{frame}
