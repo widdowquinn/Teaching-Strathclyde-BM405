@@ -15,8 +15,9 @@
 
 % The four main current sequencing technologies
 \begin{frame}
-  \frametitle{Not all ``sequencing'' is the same}
-  Sequencing technology affects your sequence data
+  \frametitle{Not all sequencing is the same}
+  It's all about the biology, but it all starts with the data.\\
+  Sequencing technology (including library prep.) affects your sequence data.
   \begin{itemize}
     \item Roche/454 \includegraphics[height=0.15\textheight]{images/454_sequencer}
     \item Illumina \includegraphics[height=0.15\textheight]{images/miseq_nextseq_hiseq}
@@ -90,9 +91,9 @@
 \begin{frame}
   \frametitle{Benchmarking on \textit{Vibrio}\footnote{\tiny{Miyamoto \textit{et al}. (2014) \textit{BMC Genomics} \textbf{15}:699 \href{http://dx.doi.org/10.1186/1471-2164-15-699}{doi:10.1186/1471-2164-15-699}}}}
     \begin{itemize}
-      \item Sequenced \textit{Vibrio parahaemolyticus} (2x chromosomes) with four technologies
+      \item Sequenced \textit{Vibrio parahaemolyticus} (2x chromosomes, closed reference genome) with four technologies
       \item Chose a sequencer for each tech, and assembled reads
-      \item Used random subsets of reads to determine required coverage (excess reads with Ion/MiSeq)
+      \item Excess reads with Ion/MiSeq: used random subsets of reads to determine required coverage 
       \item Aligned assemblies (MUMmer) to known high-quality chromosome sequence, to measure error
     \end{itemize}      
     \begin{center}
@@ -121,13 +122,13 @@
 \begin{frame}
   \frametitle{Benchmarking on \textit{Vibrio}\footnote{\tiny{Miyamoto \textit{et al}. (2014) \textit{BMC Genomics} \textbf{15}:699 \href{http://dx.doi.org/10.1186/1471-2164-15-699}{doi:10.1186/1471-2164-15-699}}}}
   \begin{itemize}
-    \item More and longer reads do not always give the best assemblies: read depth, read distribution also matters
-    \item Optimal assemblies were obtained at around 60x-80x coverage (Illumina and Ion).
+    \item More and longer reads do not always give the best assemblies: read depth, read distribution, error rate also matters
+    \item Optimal assemblies were obtained at around 60x-80x coverage, for Illumina and Ion.
     \item Multiple rRNA regions are fragmented in short-read assemblies
     \item PacBio generated single chromosome contigs
     \item Assembly of multiple-chromosome bacteria is currently feasible
   \end{itemize}  
-  Appreciable variability as methods are not standardised (e.g. sequencing technology, assembler, parameter settings and pre-processing)$\ldots$
+  Variability in published genomes as methods are not standard (e.g. sequencing technology, assembler, parameter settings and pre-processing)$\ldots$
 \end{frame}
 
 % SUBSECTION: Nanopore
@@ -182,6 +183,18 @@
     \end{center}           
 \end{frame}
 
+% Some better results
+\begin{frame}
+  \frametitle{New tools}
+  Oxford Nanopore's open beta went out without analysis tools.\\
+  Tools (Poretools, poRe, etc.) are being written/tested/validated by the user community%
+  \footnote{\tiny{Loman and Quinlan (2014) \textit{Bioinformatics} \href{http://dx.doi.org/10.1093/bioinformatics/btu555}{doi:10.1093/bioinformatics/btu555}}}$,$%
+  \footnote{\tiny{Watson \textit{et al}. (2014) \textit{Bioinformatics} \href{http://dx.doi.org/10.1093/bioinformatics/btu590}{doi:10.1093/bioinformatics/btu590}}}
+    \begin{center}
+      \includegraphics[height=0.55\textheight]{images/poretools}
+    \end{center}           
+\end{frame}
+
 % SUBSECTION: How fast is data increasing?
 % Summary of how fast the amount of sequence data is increasing
 \subsection{How fast is sequence data increasing?}
@@ -190,20 +203,19 @@
 \begin{frame}
   \frametitle{After that, the flood$\ldots$}
   High-throughput sequencing methods have completely changed the landscape of microbiology \\
-  \textbf{(Nearly) complete, (mainly) accurate sequence data is now inexpensive}
+  \textbf{(Nearly) complete, (mainly) accurate sequence data is now inexpensive} (and cheaper than analysis)
   \begin{itemize}
-    \item many more genomes
     \item \href{http://www.genomesonline.org/cgi-bin/GOLD/index.cgi?page_requested=Complete+Genome+Projects&subset_requested=Complete+And+Published}{GOLD} (19/2/2014): 3,011 ``finished'' ; 9,891 ``permanent draft'' genomes
     \item \href{http://www.genomesonline.org/cgi-bin/GOLD/index.cgi?page_requested=Complete+Genome+Projects&subset_requested=Complete+And+Published}{GOLD} (18/11/2014): 6,649 ``finished'' ; 23,552 ``permanent draft'' genomes    
     \item \href{http://www.ncbi.nlm.nih.gov/Traces/wgs/}{NCBI WGS} (19/2/2014): 17,023 microbial genomes
-    \item \href{http://www.ncbi.nlm.nih.gov/Traces/wgs/}{NCBI WGS} (18/11/2014): 26,026 micribial genomes
+    \item \href{http://www.ncbi.nlm.nih.gov/Traces/wgs/}{NCBI WGS} (18/11/2014): 26,026 microbial genomes
   \end{itemize}
 \end{frame}
 
 % And how many are we going to have?
 \begin{frame}
-  \frametitle{Predicting the future is hard$\ldots$\footnote{\tiny{\href{http://sulab.org/2013/06/sequenced-genomes-per-year/}{http://sulab.org/2013/06/sequenced-genomes-per-year/}}}}
-    Su \textit{et al}. attempted to answer this:
+  \frametitle{Predicting the future is hard$\ldots$}
+    Su \textit{et al}. attempted to answer this\footnote{\tiny{\href{http://sulab.org/2013/06/sequenced-genomes-per-year/}{http://sulab.org/2013/06/sequenced-genomes-per-year/}}}:
     \begin{center}
       \includegraphics[width=0.5\textwidth]{images/cumulative_sequenced_genomes1}
       \includegraphics[width=0.5\textwidth]{images/cumulative_sequenced_genomes2}
