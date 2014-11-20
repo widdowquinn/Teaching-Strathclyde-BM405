@@ -10,7 +10,7 @@
 \begin{frame}
   \frametitle{Principles of function prediction}
   At genome scale, we realistically have to automate function prediction. \\
-  Function prediction is just like any other prediction method. \\
+  \textbf{Function prediction is just like any other prediction method.} \\
   Two main approaches to function prediction:
   \begin{itemize}
     \item \textit{ab initio} prediction (on basis of feature sequence/context only)
@@ -41,6 +41,7 @@
 \begin{frame}
   \frametitle{Gene Ontology (GO)\footnote{\tiny{\href{http://dx.doi.org/10.1038/75556}{Ashburner \textit{et al}. (2000) \textit{Nat. Genet.} \textbf{25}:25-29 doi:10.1038/75556}}}}
   The Gene Ontology provides a common vocabulary for describing biological function, and unifying functional descriptions.\\[0.1cm]
+  \textbf{Ontologies (controlled vocabularies) are central to information-sharing.} \\[0.1cm]
   Gene Ontology Consortium: \href{http://geneontology.org/}{http://geneontology.org/} \\[0.1cm]
   Many annotation tools and databases produce GO output, or compatible controlled vocabulary terms, e.g.
   \begin{itemize}
@@ -50,11 +51,19 @@
   \end{itemize}
 \end{frame}
 
+% Gene Ontology
+\begin{frame}
+  \frametitle{Gene Ontology (GO)\footnote{\tiny{\href{http://dx.doi.org/10.1038/75556}{Ashburner \textit{et al}. (2000) \textit{Nat. Genet.} \textbf{25}:25-29 doi:10.1038/75556}}}}
+  \begin{center}
+    \includegraphics[height=0.7\textheight]{images/go_example}
+  \end{center}
+\end{frame}
+
 % How good are database annotations?
 \begin{frame}
   \frametitle{How good are database annotations?\footnote{\tiny{\href{http://dx.doi.org/10.1371/journal.pcbi.1003063}{Schnoes \textit{et al}. (2013) \textit{PLoS Comp. Biol.} \textbf{9}:e1003063 doi:10.1371/journal.pcbi.1003063}}}}
-  Are protein functions in databases determined experimentally, or by annotation transfer?\\[0.1cm]
-  High throughput experiments and genome annotations conducted without validation of function, and placed in databases.\\[0.1cm]
+  Are protein function annotations in databases determined experimentally, or by annotation transfer?\\[0.1cm]
+  High throughput experiments and genome annotations are conducted without validation of function, and placed in databases.\\[0.1cm]
   \begin{itemize}
     \item GO databases record annotation origin by publication 
     \item GO databases record evidence codes, e.g.: \textbf{EXP}=Inferred from Experiment; \textbf{ISS}=Inferred from Sequence Similarity
