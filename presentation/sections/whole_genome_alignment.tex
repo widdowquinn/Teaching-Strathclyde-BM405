@@ -135,6 +135,105 @@
 \end{frame}
 
 % SUBSECTION: Average Nucleotide Identity
+\subsection{Average Nucleotide Identity}
+
+% DNA-DNA hybridisation
+\begin{frame}
+  \frametitle{DNA-DNA hybridisation\footnote{\tiny{\href{http://dx.doi.org/10.1016/S0168-6445(00)00040-1}{Morello-Mora and Amann (2001) \textit{FEMS Micro. Rev.} \textbf{25}:39-67 doi:10.1016/S0168-6445(00)00040-1}}}}
+  \begin{columns}[T]
+    \begin{column}{5cm}
+      \begin{itemize}
+        \item Denature DNA from two organisms.
+        \item Allow to anneal. Reassociation $\approx$ similarity, measured as $\Delta T$  of denaturation curves.
+        \item ``Gold Standard'' for prokaryotic taxonomy, since 1960s. ``70\% identity $\approx$ same species.''
+        \item Proxy for sequence similarity - replace with alignment?
+      \end{itemize}
+    \end{column}
+    \begin{column}{5cm}
+      \includegraphics[width=1\textwidth]{images/ddh}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ANIb
+\begin{frame}
+  \frametitle{Average Nucleotide Identity (ANIb)\footnote{\tiny{\href{http://dx.doi.org/10.1099/ijs.0.64483-0}{Goris \textit{et al}. (2007) \textit{Int. J. Syst. Biol.} \textbf{57}:81-91 doi:10.1099/ijs.0.64483-0}}}}
+  \begin{columns}[T]
+    \begin{column}{5cm}
+      1. Break genomes into 1020t fragments\\
+      2. \textbf{ANIb}: Mean \% identity of all BLASTN matches with $>30\%$ identity and $>70\%$ fragment coverage.\\[0.5cm]
+      \begin{itemize}
+        \item DDH:ANIb linear
+        \item DDH:\%ID linear
+        \item 70\%ID $\approx$ 95\%ANIb
+      \end{itemize}
+    \end{column}
+    \begin{column}{5cm}
+      \includegraphics[width=1\textwidth]{images/ddh_ani_pid}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ANIm
+\begin{frame}
+  \frametitle{Average Nucleotide Identity (ANIm)\footnote{\tiny{\href{http://dx.doi.org/10.1073/pnas.0906412106}{Richter and Rossello-Mora (2009) \textit{Proc. Natl. Acad. Sci. USA} \textbf{106}:19126-19131 doi:10.1073/pnas.0906412106}}}}
+  \begin{columns}[T]
+    \begin{column}{3cm}
+      1. Align genomes (MUMmer)\\
+      2. \textbf{ANIm}: Mean \% identity of all matches\\[0.25cm]
+      \begin{itemize}
+        \item DDH:ANIm linear
+        \item 70\%ID $\approx$ 95\%ANIb
+      \end{itemize}
+    \end{column}
+    \begin{column}{7cm}
+      \includegraphics[width=1\textwidth]{images/ddh_anim}
+    \end{column}
+  \end{columns}
+  \textbf{TETRA}: tetranucleotide frequency-based classifier introduced in same paper.
+\end{frame}
+
+% ANIb/ANIm/TETRA comparison
+\begin{frame}
+  \frametitle{ANI/TETRA comparison}
+  All three methods applied to \textit{Anaplasma} spp.\\[0.25cm]
+  \begin{columns}[T]
+    \begin{column}{4cm}
+    ANIb:\\
+      \includegraphics[width=1\textwidth]{images/ANIb}
+    \end{column}
+    \begin{column}{4cm}
+    ANIm:\\
+      \includegraphics[width=1\textwidth]{images/ANIm}
+    \end{column}
+    \begin{column}{4cm}   
+    TETRA:\\
+      \includegraphics[width=1\textwidth]{images/TETRA}
+    \end{column}
+  \end{columns}       
+  ANIb discards information, relative to ANIm: less sensitive\\
+  ANIb/ANIm $\approx$ evolutionary history; TETRA $\approx$ bulk composition
+\end{frame}
+
+% ANIm in practice
+\begin{frame}
+  \frametitle{ANI in practice}
+  Practical applications\footnote{\tiny{\href{http://dx.doi.org/10.1099/ijs.0.052944-0}{van der Wolf \textit{et al}. (2014) \textit{Int. J. Syst. Evol. Micr.} \textbf{64}:768-774 doi:10.1099/ijs.0.052944-0}}}\\[0.25cm]
+  \begin{columns}[T]
+    \begin{column}{5cm}
+    29 \textit{Dickeya} isolates:\\
+    species structure\\
+      \includegraphics[width=1\textwidth]{images/ANIm_Dickeya}
+    \end{column}
+    \begin{column}{5cm}
+    180 \textit{E.coli} isolates:\\
+    subtyping
+      \includegraphics[width=1\textwidth]{images/ANIm_Ecoli}
+    \end{column}
+  \end{columns}       
+\end{frame}
+
+% SUBSECTION: Average Nucleotide Identity
 \subsection{Whole Genome Alignment in Practice}
 
 % Pyrococcus
@@ -252,101 +351,26 @@
   Example exercise in \url{data/whole_genome_alignment}
 \end{frame}
 
+
 % SUBSECTION: Average Nucleotide Identity
-\subsection{Average Nucleotide Identity}
+\subsection{Chromosome painting}
 
 % DNA-DNA hybridisation
 \begin{frame}
-  \frametitle{DNA-DNA hybridisation\footnote{\tiny{\href{http://dx.doi.org/10.1016/S0168-6445(00)00040-1}{Morello-Mora and Amann (2001) \textit{FEMS Micro. Rev.} \textbf{25}:39-67 doi:10.1016/S0168-6445(00)00040-1}}}}
-  \begin{columns}[T]
-    \begin{column}{5cm}
-      \begin{itemize}
-        \item Denature DNA from two organisms.
-        \item Allow to anneal. Reassociation $\approx$ similarity, measured as $\Delta T$  of denaturation curves.
-        \item ``Gold Standard'' for prokaryotic taxonomy, since 1960s. ``70\% identity $\approx$ same species.''
-        \item Proxy for sequence similarity - replace with alignment?
-      \end{itemize}
-    \end{column}
-    \begin{column}{5cm}
-      \includegraphics[width=1\textwidth]{images/ddh}
-    \end{column}
-  \end{columns}
+  \frametitle{Chromosome painting\footnote{\tiny{\href{http://dx.doi.org/10.1093/molbev/mst055}{Yahara \textit{et al}. (2013) \textit{Mol. Biol. Evol.} \textbf{30}:1454-1464 doi:10.1093/molbev/mst055}}}}
+  ``Chromosome painting'' infers recombination-derived `chunks'\\
+  Genome's haplotype constructed in terms of recombination events from a `donor' to a `recipient'\\
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{images/chromosome_painting}
+  \end{center}     
 \end{frame}
 
-% ANIb
+% DNA-DNA hybridisation
 \begin{frame}
-  \frametitle{Average Nucleotide Identity (ANIb)\footnote{\tiny{\href{http://dx.doi.org/10.1099/ijs.0.64483-0}{Goris \textit{et al}. (2007) \textit{Int. J. Syst. Biol.} \textbf{57}:81-91 doi:10.1099/ijs.0.64483-0}}}}
-  \begin{columns}[T]
-    \begin{column}{5cm}
-      1. Break genomes into 1020t fragments\\
-      2. \textbf{ANIb}: Mean \% identity of all BLASTN matches with $>30\%$ identity and $>70\%$ fragment coverage.\\[0.5cm]
-      \begin{itemize}
-        \item DDH:ANIb linear
-        \item DDH:\%ID linear
-        \item 70\%ID $\approx$ 95\%ANIb
-      \end{itemize}
-    \end{column}
-    \begin{column}{5cm}
-      \includegraphics[width=1\textwidth]{images/ddh_ani_pid}
-    \end{column}
-  \end{columns}
-\end{frame}
-
-% ANIm
-\begin{frame}
-  \frametitle{Average Nucleotide Identity (ANIm)\footnote{\tiny{\href{http://dx.doi.org/10.1073/pnas.0906412106}{Richter and Rossello-Mora (2009) \textit{Proc. Natl. Acad. Sci. USA} \textbf{106}:19126-19131 doi:10.1073/pnas.0906412106}}}}
-  \begin{columns}[T]
-    \begin{column}{3cm}
-      1. Align genomes (MUMmer)\\
-      2. \textbf{ANIm}: Mean \% identity of all matches\\[0.25cm]
-      \begin{itemize}
-        \item DDH:ANIm linear
-        \item 70\%ID $\approx$ 95\%ANIb
-      \end{itemize}
-    \end{column}
-    \begin{column}{7cm}
-      \includegraphics[width=1\textwidth]{images/ddh_anim}
-    \end{column}
-  \end{columns}
-  \textbf{TETRA}: tetranucleotide frequency-based classifier introduced in same paper.
-\end{frame}
-
-% ANIb/ANIm/TETRA comparison
-\begin{frame}
-  \frametitle{ANI/TETRA comparison}
-  All three methods applied to \textit{Anaplasma} spp.\\[0.25cm]
-  \begin{columns}[T]
-    \begin{column}{4cm}
-    ANIb:\\
-      \includegraphics[width=1\textwidth]{images/ANIb}
-    \end{column}
-    \begin{column}{4cm}
-    ANIm:\\
-      \includegraphics[width=1\textwidth]{images/ANIm}
-    \end{column}
-    \begin{column}{4cm}   
-    TETRA:\\
-      \includegraphics[width=1\textwidth]{images/TETRA}
-    \end{column}
-  \end{columns}       
-  ANIb discards information, relative to ANIm: less sensitive\\
-  ANIb/ANIm $\approx$ evolutionary history; TETRA $\approx$ bulk composition
-\end{frame}
-
-% ANIm in practice
-\begin{frame}
-  \frametitle{ANI in practice}
-  Practical applications\footnote{\tiny{\href{http://dx.doi.org/10.1099/ijs.0.052944-0}{van der Wolf \textit{et al}. (2014) \textit{Int. J. Syst. Evol. Micr.} \textbf{64}:768-774 doi:10.1099/ijs.0.052944-0}}}\\[0.25cm]
-  \begin{columns}[T]
-    \begin{column}{5cm}
-    29 \textit{Dickeya} isolates:\\
-    species structure\\
-      \includegraphics[width=1\textwidth]{images/ANIm_Dickeya}
-    \end{column}
-    \begin{column}{5cm}
-    180 \textit{E.coli} isolates:\\
-    subtyping
-      \includegraphics[width=1\textwidth]{images/ANIm_Ecoli}
-    \end{column}
-  \end{columns}       
+  \frametitle{Chromosome painting\footnote{\tiny{\href{http://dx.doi.org/10.1093/molbev/mst055}{Yahara \textit{et al}. (2013) \textit{Mol. Biol. Evol.} \textbf{30}:1454-1464 doi:10.1093/molbev/mst055}}}}
+  Recombination events summarised in a \textit{coancestry matrix}.\\
+  In \textit{H. pylori}, most recombination is within geographical bounds, but there is asymmetrical donation from Amerind to European isolates.
+  \begin{center}
+    \includegraphics[width=0.75\textwidth]{images/coancestry}
+  \end{center}     
 \end{frame}
