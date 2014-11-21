@@ -48,7 +48,7 @@
 % Broad differences in chemistry and output
 \begin{frame}
   \frametitle{Four different chemistries\footnote{\tiny{Loman \textit{et al}. (2012) \textit{Nat. Rev. Micro.} \textbf{31}:294-296 \href{http://dx.doi.org/10.1038/nbt.2522}{doi:10.1038/nbt.2522}}}}
-  Results differ by technology, and may require different bioinformatic treatment$\ldots$
+  Reads differ by technology, and may require different bioinformatic treatment$\ldots$
   \begin{itemize}
     \item \textbf{Roche/454}: Pyrosequencing (long reads, but expensive, and high homopolymer errors) (700-800bp, 0.7Gbp, 23h)
     \item \textbf{Illumina}: Reversible terminator (cost-effective, massive throughput, but short read lengths) (2x150bp, 1.5Gbp, 27h)
@@ -92,7 +92,7 @@
   \frametitle{Benchmarking on \textit{Vibrio}\footnote{\tiny{Miyamoto \textit{et al}. (2014) \textit{BMC Genomics} \textbf{15}:699 \href{http://dx.doi.org/10.1186/1471-2164-15-699}{doi:10.1186/1471-2164-15-699}}}}
     \begin{itemize}
       \item Sequenced \textit{Vibrio parahaemolyticus} (2x chromosomes, closed reference genome) with four technologies
-      \item Chose a sequencer for each tech, and assembled reads
+      \item Chose an assembler for each tech, and assembled reads
       \item Excess reads with Ion/MiSeq: used random subsets of reads to determine required coverage 
       \item Aligned assemblies (MUMmer) to known high-quality chromosome sequence, to measure error
     \end{itemize}      
@@ -220,32 +220,32 @@
       \includegraphics[width=0.5\textwidth]{images/cumulative_sequenced_genomes1}
       \includegraphics[width=0.5\textwidth]{images/cumulative_sequenced_genomes2}
     \end{center}     
-    How will we keep this much genomic data well-organised?
+%    How will we keep this much genomic data well-organised?
 \end{frame}
 
 % SUBSECTION: Genome sequence standard
 % Brief account of MIGS
-\subsection{Genome Sequence and Data Standards}
-
-% MIGS
-\begin{frame}
-  \frametitle{MIGS\footnote{\tiny{Field \textit{et al}. (2008) \textit{Nat. Biotech.} \textbf{26}:541-547 \href{http://dx.doi.org/10.1038/nbt.1823}{doi:10.1038/nbt.1823}}}}
-  Minimum Information about a (Meta)Genome Sequence (MIGS) \\
-  \begin{itemize}
-    \item Standardisation of the data describing a genome sequence; standards are \textbf{essential} to data integrity and reuse
-    \item Defines core descriptors of the data that cannot be derived from the data (geographical context, experimental methods, etc.)
-    \item Produced by \href{http://en.wikipedia.org/wiki/Genomic_Standards_Consortium}{Genomic Standards Consortium} (\href{http://gensc.org/}{gensc.org})
-    \item Provided as checklist and XML schema
-    \item Now also ``Minimum Information about an ENvironmental Sequence'' (MIENS) and others\footnote{\tiny{Yilmaz \textit{et al}. (2011) \textit{Nat. Biotech.} \textbf{29}:541-547 \href{http://dx.doi.org/10.1038/nbt1360}{doi:10.1038/nbt1360}}}
-    \item Global Microbial Identifier (\href{http://www.globalmicrobialidentifier.org/}{http://www.globalmicrobialidentifier.org/})
-  \end{itemize}        
-\end{frame}
-
-% MIGS table
-\begin{frame}
-  \frametitle{MIGS\footnote{\tiny{Field \textit{et al}. (2008) \textit{Nat. Biotech.} \textbf{26}:541-547 \href{http://dx.doi.org/10.1038/nbt.1823}{doi:10.1038/nbt.1823}}}}
-  Minimum Information about a (Meta)Genome Sequence (MIGS) \\
-  \begin{center}
-    \includegraphics[width=1\textwidth]{images/migs_table}
-  \end{center}           
-\end{frame}
+%\subsection{Genome Sequence and Data Standards}
+%
+%% MIGS
+%\begin{frame}
+%  \frametitle{MIGS\footnote{\tiny{Field \textit{et al}. (2008) \textit{Nat. Biotech.} \textbf{26}:541-547 \href{http://dx.doi.org/10.1038/nbt.1823}{doi:10.1038/nbt.1823}}}}
+%  Minimum Information about a (Meta)Genome Sequence (MIGS) \\
+%  \begin{itemize}
+%    \item Standardisation of the data describing a genome sequence; standards are \textbf{essential} to data integrity and reuse
+%    \item Defines core descriptors of the data that cannot be derived from the data (geographical context, experimental methods, etc.)
+%    \item Produced by \href{http://en.wikipedia.org/wiki/Genomic_Standards_Consortium}{Genomic Standards Consortium} (\href{http://gensc.org/}{gensc.org})
+%    \item Provided as checklist and XML schema
+%    \item Now also ``Minimum Information about an ENvironmental Sequence'' (MIENS) and others\footnote{\tiny{Yilmaz \textit{et al}. (2011) \textit{Nat. Biotech.} \textbf{29}:541-547 \href{http://dx.doi.org/10.1038/nbt1360}{doi:10.1038/nbt1360}}}
+%    \item Global Microbial Identifier (\href{http://www.globalmicrobialidentifier.org/}{http://www.globalmicrobialidentifier.org/})
+%  \end{itemize}        
+%\end{frame}
+%
+%% MIGS table
+%\begin{frame}
+%  \frametitle{MIGS\footnote{\tiny{Field \textit{et al}. (2008) \textit{Nat. Biotech.} \textbf{26}:541-547 \href{http://dx.doi.org/10.1038/nbt.1823}{doi:10.1038/nbt.1823}}}}
+%  Minimum Information about a (Meta)Genome Sequence (MIGS) \\
+%  \begin{center}
+%    \includegraphics[width=1\textwidth]{images/migs_table}
+%  \end{center}           
+%\end{frame}
