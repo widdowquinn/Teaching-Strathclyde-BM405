@@ -10,15 +10,15 @@
 % What do you align, and why?
 \begin{frame}
   \frametitle{What to align, and why?}
+  \begin{center}
+    \includegraphics[width=0.6\textwidth]{images/act_comparison}
+  \end{center}  
   To be useful, aligned genomes should:
   \begin{itemize}
     \item derive from a sufficiently recent common ancestor, so homologous regions can be identified
     \item derive from a sufficiently distant common ancestor, so that there are ``interesting'' differences to be identified
-    \item \textbf{help to answer your biological question}: is your question organism or phenotype-specific? 
+    \item \textbf{help to answer your biological question} 
   \end{itemize}
-  \begin{center}
-    \includegraphics[width=0.6\textwidth]{images/act_comparison}
-  \end{center}  
 \end{frame}
 
 % How do you align, and why?
@@ -61,8 +61,8 @@
 % BLAST vs megaBLAST
 \begin{frame}
   \frametitle{BLAST vs megaBLAST}
-  megaBLAST is faster, but does it matter for biology?\\[0.2cm]
-  BLAST (top) and megaBLAST (bottom) pairwise comparisons:
+  megaBLAST is faster, but does it give the same biological results?\\[0.1cm]
+  megaBLAST (top) and BLAST (bottom) pairwise comparisons:
   \begin{center}
     \includegraphics[width=0.8\textwidth]{images/act_wgs6}
   \end{center}    
@@ -143,9 +143,9 @@
   \begin{columns}[T]
     \begin{column}{5cm}
       \begin{itemize}
+        \item ``Gold Standard'' for prokaryotic taxonomy, since 1960s. ``70\% identity $\approx$ same species.''
         \item Denature DNA from two organisms.
         \item Allow to anneal. Reassociation $\approx$ similarity, measured as $\Delta T$  of denaturation curves.
-        \item ``Gold Standard'' for prokaryotic taxonomy, since 1960s. ``70\% identity $\approx$ same species.''
       \end{itemize}
     \end{column}
     \begin{column}{5cm}
@@ -218,7 +218,7 @@
 % ANIm in practice
 \begin{frame}
   \frametitle{ANI in practice}
-  Practical applications\footnote{\tiny{\href{http://dx.doi.org/10.1099/ijs.0.052944-0}{van der Wolf \textit{et al}. (2014) \textit{Int. J. Syst. Evol. Micr.} \textbf{64}:768-774 doi:10.1099/ijs.0.052944-0}}}\\[0.25cm]
+  Practical applications\footnote{\tiny{\href{http://dx.doi.org/10.1099/ijs.0.052944-0}{van der Wolf \textit{et al}. (2014) \textit{Int. J. Syst. Evol. Micr.} \textbf{64}:768-774 doi:10.1099/ijs.0.052944-0}}} (note: no gene content used)\\[0.25cm]
   \begin{columns}[T]
     \begin{column}{5cm}
     29 \textit{Dickeya} isolates:\\
@@ -256,21 +256,22 @@
   \frametitle{\textit{Pyrococcus} spp.\footnote{\tiny{\href{http://dx.doi.org/10.1093/nar/30.9.1902}{Zivanovic \textit{et al}. (2002) \textit{Nuc. Acids Res.} \textbf{30}:1902-1910 doi:10.1093/nar/30.9.1902}}}}
   Comparison of \textit{Pyrococcus} genomes (\textit{P. horikoshii}, \textit{P. abyssi}, \textit{P. furiosus}) shows chromosome-shuffling.\\
   \begin{center}
-    \includegraphics[height=0.65\textheight]{images/pyrococcus}
+    \includegraphics[height=0.5\textheight]{images/pyrococcus}
   \end{center}    
+  Transposition a major cause of genomic disruption    
 \end{frame}
 
-\begin{frame}
-  \frametitle{\textit{Pyrococcus} spp.\footnote{\tiny{\href{http://dx.doi.org/10.1093/nar/30.9.1902}{Zivanovic \textit{et al}. (2002) \textit{Nuc. Acids Res.} \textbf{30}:1902-1910 doi:10.1093/nar/30.9.1902}}}}
-  Comparison of \textit{Pyrococcus} genomes (\textit{P. horikoshii}, \textit{P. abyssi}, \textit{P. furiosus}) shows chromosome-shuffling.\\[0.2cm]
-  Three types of rearrangement:
-  \begin{enumerate}
-    \item inversion and translation across the replication axis
-    \item inversion and translocation restricted to a replichore (`one side' of axis)
-    \item mobility of long clusters of repeat sequences
-  \end{enumerate}  
-  Transposition was a major cause of genomic disruption  
-\end{frame}
+%\begin{frame}
+%  \frametitle{\textit{Pyrococcus} spp.\footnote{\tiny{\href{http://dx.doi.org/10.1093/nar/30.9.1902}{Zivanovic \textit{et al}. (2002) \textit{Nuc. Acids Res.} \textbf{30}:1902-1910 doi:10.1093/nar/30.9.1902}}}}
+%  Comparison of \textit{Pyrococcus} genomes (\textit{P. horikoshii}, \textit{P. abyssi}, \textit{P. furiosus}) shows chromosome-shuffling.\\[0.2cm]
+%  Three types of rearrangement:
+%  \begin{enumerate}
+%    \item inversion and translation across the replication axis
+%    \item inversion and translocation restricted to a replichore (`one side' of axis)
+%    \item mobility of long clusters of repeat sequences
+%  \end{enumerate}  
+%  Transposition was a major cause of genomic disruption  
+%\end{frame}
 
 % Vibrio mimicus
 \begin{frame}
@@ -280,7 +281,7 @@
   \begin{center}
     \includegraphics[width=1\textwidth]{images/v_mimicus}
   \end{center}    
-  Suggests modularity of genome organisation, and mechanisms for virulence adaptation.
+  Suggests modularity of genome organisation, as a mechanism for adaptation (HGT, two-speed genome).
 \end{frame}
 
 % Serratia symbiotica
@@ -299,7 +300,8 @@
 % Multiple genome alignment
 \begin{frame}
   \frametitle{Multiple genome alignment is hard}
-  Really, really hard.\\[0.2cm]
+  Can we not just align all our genomes, together?\\[0.1cm]
+  No. Because it's really, really hard.\\[0.1cm]
   Analogous to problems with multiple sequence alignment (three or more sequences).
   \begin{itemize}
     \item Computationally extremely expensive ($O(L^n)$, $L$=length of sequence, $n$=number of sequences) 
@@ -359,7 +361,7 @@
 \begin{frame}
   \frametitle{Chromosome painting\footnote{\tiny{\href{http://dx.doi.org/10.1093/molbev/mst055}{Yahara \textit{et al}. (2013) \textit{Mol. Biol. Evol.} \textbf{30}:1454-1464 doi:10.1093/molbev/mst055}}}}
   ``Chromosome painting'' infers recombination-derived `chunks'\\
-  Genome's haplotype constructed in terms of recombination events from a `donor' to a `recipient'\\
+  Genome's haplotype constructed in terms of recombination events from a `donor' to a `recipient' genome\\
   \begin{center}
     \includegraphics[width=0.7\textwidth]{images/chromosome_painting}
   \end{center}     
@@ -369,7 +371,7 @@
 \begin{frame}
   \frametitle{Chromosome painting\footnote{\tiny{\href{http://dx.doi.org/10.1093/molbev/mst055}{Yahara \textit{et al}. (2013) \textit{Mol. Biol. Evol.} \textbf{30}:1454-1464 doi:10.1093/molbev/mst055}}}}
   Recombination events summarised in a \textit{coancestry matrix}.\\
-  In \textit{H. pylori}, most recombination is within geographical bounds, but there is asymmetrical donation from Amerind to European isolates.
+  \textit{H. pylori}: most within geographical bounds, but asymmetrical donation from Amerind/East Asian to European isolates.
   \begin{center}
     \includegraphics[width=0.75\textwidth]{images/coancestry}
   \end{center}     
