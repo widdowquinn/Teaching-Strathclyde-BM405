@@ -50,6 +50,28 @@ CGGTCTTGGGATAGATGGGTTGCAGGTTGCGGTAAAGCTCGGACTCCAGAGCGTCCAGGGTAGACTGGCTAATCTTCTGC
   \end{enumerate}
 \end{frame}
 
+
+% Variation in quality: good reads
+\begin{frame}[fragile]
+  \frametitle{Quality Control}
+  The quality of basecalls (error rate) varies between and along reads.\\
+  \begin{center}
+    \includegraphics[height=0.6\textheight]{images/per_base_quality}
+  \end{center}  
+  (real data from our \textit{E.coli} sequencing: good quality)
+\end{frame}
+
+% Variation in quality: bad reads
+\begin{frame}[fragile]
+  \frametitle{Quality Control}
+  Some datasets are better than others.\\
+  \begin{center}
+    \includegraphics[height=0.5\textheight]{images/fastqc}
+  \end{center}  
+  Reads can be trimmed, or discarded.\\
+  Including poor reads compromises assembly.
+\end{frame}
+
 % FASTQ data format
 \begin{frame}[fragile]
   \frametitle{FASTQ encoding\footnote{\tiny{\href{http://dx.doi.org/10.1093/nar/gkp1137}{Cock \textit{et al}. (2009) \textit{Bioinformatics} \textbf{38}:1767-1771 doi:10.1093/nar/gkp1137}}}}
@@ -73,26 +95,6 @@ CGGTCTTGGGATAGATGGGTTGCAGGTTGCGGTAAAGCTCGGACTCCAGAGCGTCCAGGGTAGACTGGCTAATCTTCTGC
   \textbf{Knowing where your data comes from, and the data format and version, is always important.}
 \end{frame}
 
-% Variation in quality: good reads
-\begin{frame}[fragile]
-  \frametitle{Quality Control}
-  The quality of basecalls (error rate) varies between and along reads.\\
-  \begin{center}
-    \includegraphics[height=0.6\textheight]{images/per_base_quality}
-  \end{center}  
-  (real data from our \textit{E.coli} sequencing: good quality)
-\end{frame}
-
-% Variation in quality: bad reads
-\begin{frame}[fragile]
-  \frametitle{Quality Control}
-  Some datasets are better than others.\\
-  \begin{center}
-    \includegraphics[height=0.5\textheight]{images/fastqc}
-  \end{center}  
-  Reads can be trimmed, or discarded.\\
-  Including poor reads compromises assembly.
-\end{frame}
 
 
 % SUBSECTION: SAM/BAM/CRAM
