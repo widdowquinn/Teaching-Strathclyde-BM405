@@ -54,11 +54,11 @@
 \begin{frame}
   \frametitle{``Gold Standard'' results}
   \begin{itemize}
-    \item Tested \texttt{glimmer}\footnote{\tiny{\href{http://dx.doi.org/10.1093/bioinformatics/btm009}{Delcher \textit{et al}. (2007) \textit{Bioinformatics} \textbf{23}:673-679 doi:10.1093/bioinformatics/btm009}}} and \texttt{prodigal}\footnote{\tiny{\href{http://dx.doi.org/10.1186/1471-2105-11-119}{Hyatt \textit{et al}. (2010) \textit{BMC Bioinf.} \textbf{11}:119 doi:10.1186/1471-2105-11-119}}} on two enterobacterial close relatives as "gold standards"
-    \begin{itemize}
+    \item Tested \texttt{glimmer}\footnote{\tiny{\href{http://dx.doi.org/10.1093/bioinformatics/btm009}{Delcher \textit{et al}. (2007) \textit{Bioinformatics} \textbf{23}:673-679 doi:10.1093/bioinformatics/btm009}}} and \texttt{prodigal}\footnote{\tiny{\href{http://dx.doi.org/10.1186/1471-2105-11-119}{Hyatt \textit{et al}. (2010) \textit{BMC Bioinf.} \textbf{11}:119 doi:10.1186/1471-2105-11-119}}} on two enterobacterial close relatives as ``gold standards'' (still not perfect$\ldots$)
+    \begin{enumerate}
       \item Manually annotated ($>$3 expert person years)
       \item Community-annotated (many research groups, interested in their own subset of genes)
-    \end{itemize}
+    \end{enumerate}
     \item \textbf{Both methods trained directly on the annotated genes in each organism!}
   \end{itemize} 
 \end{frame}
@@ -119,7 +119,7 @@
      \item Alternative CDS (and all other) prediction methods are unlikely to give identical results, or perform equally well
      \item \textbf{There is No Free Lunch} (this is a theorem: \href{http://en.wikipedia.org/wiki/No_free_lunch_theorem}{http://en.wikipedia.org/wiki/No\_free\_lunch\_theorem})
      \item To assess/choose between methods, performance metrics are required
-     \item Even on (relatively simple) prokaryotes, current best methods for CDS prediction are imperfect
-     \item Manual assessment and intervention is essential, and usually the most demanding and time-consuming part of the process
+     \item Even on prokaryotes (a relatively simple case), current best methods for CDS prediction are imperfect
+     \item Manual correction is often required (usually the most demanding and time-consuming part of the process).
    \end{itemize}
 \end{frame}

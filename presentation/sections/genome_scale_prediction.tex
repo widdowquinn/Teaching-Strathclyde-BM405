@@ -10,11 +10,11 @@
 \begin{frame}
   \frametitle{Why Performance Metrics Matter\footnote{\tiny{\href{http://dx.doi.org/10.1007/978-1-62703-986-4_4}{Pritchard and Broadhurst (2014) \textit{Methods Mol. Biol.} \textbf{1127}:53-64 doi:10.1007/978-1-62703-986-4\_4}}}}
   \begin{itemize}
-    \item<1-> Imagine a predictor for protein functional class (e.g. Type III effector)
+    \item<1-> Imagine a paper describing a predictor for protein functional class (e.g. Type III effector)
     \item<1-> The paper reports \textbf{$\text{sensitivity}=0.95$}, \textbf{$\text{FPR}=0.01$}
     \item<1-> You run the predictor on 20,000 proteins in an organism
     \item<1-> It predicts 130 members of the class. How many of them are likely to be true positives?
-    \item<2-> \textit{We need a baseline level of that class in the genome to determine this.}        
+    \item<2-> \textit{We need a baseline level of that class ($f_X$) in the genome to determine this.}        
     \item<2-> We estimate $\approx$ 200 members in protein complement, so $f_X=0.01$
     \begin{itemize}
       \item $f_X = 0.01 \implies P(\text{class}|\text{+ve}) = 0.490 \approx 0.5$
@@ -30,14 +30,19 @@
     \begin{itemize}
       \item $P(X|+) =  \frac{P(+|X) P(X)}{P(+|X) P(X) + P(+|\bar{X}) P(\bar{X})}$
     \end{itemize}
-    \item This step commonly overlooked in the literature (confirmation bias? people want to see positives/their predictor work)
+    \item This step commonly overlooked in the literature
+      \begin{itemize}
+        \item confirmation bias
+        \item people want to see positive examples/tell a story
+        \item people want to think their predictor works
+      \end{itemize}
   \end{itemize} 
 \end{frame}
 
 \begin{frame}
   \frametitle{A cautionary tale\footnote{\tiny{\href{http://dx.doi.org/10.1371/journal.ppat.1000376}{Arnold \textit{et al}. (2009) \textit{PLoS Pathog.} \textbf{5}:e1000376 doi:10.1371/journal.ppat.1000376}}}}
   \begin{itemize}
-    \item<1-> Paper describes \textbf{EffectiveT3}, a type III effector prediction tool
+    \item<1-> Paper describes \texttt{EffectiveT3}, a type III effector prediction tool
     \item<1-> Reported \textbf{sensitivity $\approx$ 0.71, FPR $\approx$ 0.15}
     \item<1-> Applied tool to 739 complete bacterial and archaeal genomes
     \item<2-> Organisms with an identifiable T3SS: 2-7\% of genome predicted to be secreted
@@ -59,6 +64,7 @@
         \item $\implies P(X|+) \approx 0.13$
       \end{itemize}
     \end{itemize}
+  \textbf{Only 13\% of predictions likely to be positive!}\\[0.1cm]
   How many predicted type III secreted proteins were there$\ldots$
 \end{frame}
 

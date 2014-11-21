@@ -10,16 +10,27 @@
 \begin{frame}
   \frametitle{Prokaryotic CDS Prediction Methods}
   Using CDS prediction as an illustrative example for all feature prediction.\\[0.2cm]
+  Sequence conservation (evolutionary constraint; an unsupervised, \textit{a priori} method) can be useful
   \begin{itemize}
     \item Prokaryotes ``easier'' than eukaryotes for gene/CDS prediction
     \item Less uncertainty in predictions (isoforms, gene structure)
     \begin{itemize}
       \item Very gene-dense (over 90\% of chromosome is coding sequence)
       \item No intron-exon structure
+    \end{itemize}       
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Prokaryotic CDS Prediction Methods}
+  ORFs are plentiful:
+  \begin{center}
+    \includegraphics[width=1\textwidth]{images/orfs}     
+  \end{center}  
+    \begin{itemize}
       \item Problem is: ``which possible ORF contains the true gene, and which start site is correct?''
       \item Still not a solved problem
     \end{itemize}       
-  \end{itemize}
 \end{frame}
 
 % Finding ORFs
@@ -66,7 +77,7 @@
 
 \begin{frame}
   \frametitle{Comparing predictions in Artemis}
-  \texttt{Glimmer}(green)/\texttt{Prodigal}(blue) CDS prediction methods do not always agree.
+  \texttt{Glimmer}(green)/\texttt{Prodigal}(blue) CDS prediction methods do not always agree (presence/absence, start position).
   \begin{center}
     \includegraphics[width=1\textwidth]{images/artemis_cdspred4}     
   \end{center}
