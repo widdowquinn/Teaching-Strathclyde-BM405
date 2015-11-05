@@ -1,4 +1,4 @@
-# README.md Teaching-2014-11-21-Strathclyde
+# README.md Teaching-Strathclyde-BM405
 
 ## Overview
 
