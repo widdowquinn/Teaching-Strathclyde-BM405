@@ -11,11 +11,27 @@
 % SUBSECTION: Four dominant technologies
 % A summary of the characteristics of the four dominant sequencing 
 % technologies, and how they can be benchmarked
-\subsection{Four dominant technologies}
+\subsection{Three revolutions, four dominant technologies}
+
+% The first two of three revolutions
+\begin{frame}
+  \frametitle{Revolutions One and Two\footnote{\tiny{Loman and Pallen (2015) \textit{Nat. Rev. Micro.} \href{http://dx.doi.org/10.1038/nrmicro3565}{doi:10.1038/nrmicro3565}}}}
+  \textbf{Revolution One:} whole-genome shotgun
+  \begin{itemize}
+    \item First bacterial genomes: \textit{Haemophilus influenzae} (1995); \textit{E. coli}, \textit{Bacillus subtilis} (1997)
+    \item (Oh, and the human genome)
+  \end{itemize}
+  \textbf{Revolution Two:} high-throughput sequencing
+  \begin{itemize}
+    \item "Next-generation" sequencing (now "last-generation").
+    \item 454 GS20 (2005), Illumina GAII (2007).
+    \item metagenomics; surveillance sequencing; SNP-based comparisons; transposon-sequencing for functional genomics; ChIP-seq; $\ldots$
+  \end{itemize}
+\end{frame}
 
 % The four main current sequencing technologies
 \begin{frame}
-  \frametitle{Not all sequencing is the same}
+  \frametitle{Not all HT sequencing is the same}
   It's all about the biology, but it all starts with the data.\\
   Sequencing technology (including library prep.) affects your sequence data.
   \begin{itemize}
@@ -37,10 +53,10 @@
 
 % Paired- and single-end reads
 \begin{frame}
-  \frametitle{PE vs SE}
-  Reads may be single-end, or paired-end.
+  \frametitle{HTS: PE vs SE}
+  High-throughput sequencing (e.g. Illumina), reads may be single-end, or paired-end.
   \begin{center}
-    \includegraphics[height=0.6\textheight]{images/pe_vs_se}
+    \includegraphics[height=0.55\textheight]{images/pe_vs_se}
   \end{center}      
   Putting the jigsaw back together is sequence assembly.
 \end{frame}
@@ -132,12 +148,24 @@
 \end{frame}
 
 % SUBSECTION: Nanopore
-% Brief diversion to Oxford Nanopore
+% This is likely to become the dominant sequencing technology
 \subsection{Nanopore}
+
+% The third revolution
+\begin{frame}
+  \frametitle{Revolution Three\footnote{\tiny{Loman and Pallen (2015) \textit{Nat. Rev. Micro.} \href{http://dx.doi.org/10.1038/nrmicro3565}{doi:10.1038/nrmicro3565}}}}
+  \textbf{Revolution Three:} single-molecule long-read sequencing
+  \begin{itemize}
+    \item Living through the revolution, now
+    \item PacBio (SMRT): large machine, expensive
+    \item Nanopore: portable device, inexpensive
+    \item Less mature, less accurate, improving rapidly
+  \end{itemize}
+\end{frame}
 
 % Nanopore
 \begin{frame}
-  \frametitle{What's just arrived?}
+  \frametitle{The future dominant sequencer?}
   Oxford Nanopore. A sequencer the size of your hand.
     \begin{center}
       \includegraphics[width=0.48\textwidth]{images/minion_run}\thinspace
@@ -152,7 +180,7 @@
 
 % Some better results
 \begin{frame}
-  \frametitle{New data\footnote{\tiny{Quick \textit{et al}. (2014) \textit{GigaScience} \textbf{3}:22 \href{http://dx.doi.org/10.1111/1755-0998.12324}{doi:10.1111/1755-0998.12324}}}}
+  \frametitle{Early data\footnote{\tiny{Quick \textit{et al}. (2014) \textit{GigaScience} \textbf{3}:22 \href{http://dx.doi.org/10.1111/1755-0998.12324}{doi:10.1111/1755-0998.12324}}}}
   It's a fast-moving area, and results are improving.
     \begin{center}
       \includegraphics[height=0.65\textheight]{images/nanopore_quick}
@@ -161,9 +189,9 @@
 
 % Some better results
 \begin{frame}
-  \frametitle{New tools}
+  \frametitle{Developing tools}
   Oxford Nanopore's open beta went out without analysis tools.\\
-  Tools (Poretools, poRe, etc.) are being written/tested/validated by the user community%
+  Tools (Poretools, poRe, etc.) were written/tested/validated by the user community%
   \footnote{\tiny{Loman and Quinlan (2014) \textit{Bioinformatics} \href{http://dx.doi.org/10.1093/bioinformatics/btu555}{doi:10.1093/bioinformatics/btu555}}}$,$%
   \footnote{\tiny{Watson \textit{et al}. (2014) \textit{Bioinformatics} \href{http://dx.doi.org/10.1093/bioinformatics/btu590}{doi:10.1093/bioinformatics/btu590}}}
     \begin{center}
@@ -171,32 +199,57 @@
     \end{center}           
 \end{frame}
 
+% Some recent applications
+\begin{frame}
+  \frametitle{Recent applications}
+  \begin{itemize}
+    \item Amplicon sequencing (16S metagenomics) of bacteria and viruses \footnote{\tiny{Kilianski \textit{et al}. (2015) \textit{GigaScience} \href{http://dx.doi.org/10.1186/s13742-015-0051-z}{doi:10.1186/s13742-015-0051-z}}}
+    \item Real-time viral diagnostics \footnote{\tiny{Greninger \textit{et al}. (2015) \textit{Genome Med.} \href{http://dx.doi.org/10.1186/s13073-015-0220-9}{doi:10.1186/s13073-015-0220-9}}}
+    \item Scaffolding of a bacterial genome \footnote{\tiny{Karlsson \textit{et al}. (2015) \textit{Sci. Reports} \href{http://dx.doi.org/10.1038/srep11996}{doi:10.1038/srep11996}}}
+    \item Complete \textit{de novo} assembly of a bacterial genome \footnote{\tiny{Loman \textit{et al}. (2015) \textit{Nat. Meth.} \href{http://dx.doi.org/10.1038/nmeth.3444}{doi:10.1038/nmeth.3444}}}
+  \end{itemize}
+    \begin{center}
+      \includegraphics[height=0.3\textheight]{images/minion_asm_dotplot}
+      \includegraphics[height=0.3\textheight]{images/minion_asm_tablet}
+    \end{center}           
+\end{frame}
+
+
+% Three revolutions summary
+\begin{frame}
+  \frametitle{The three revolutions\footnote{\tiny{Loman and Pallen (2015) \textit{Nat. Rev. Micro.} \href{http://dx.doi.org/10.1038/nrmicro3565}{doi:10.1038/nrmicro3565}}}}
+    \begin{center}
+      \includegraphics[width=0.9\textwidth]{images/revolutions}\thinspace
+    \end{center} 
+\end{frame}
+
 % SUBSECTION: How fast is data increasing?
 % Summary of how fast the amount of sequence data is increasing
 \subsection{How fast is sequence data increasing?}
 
-% How many genomes do we have, now?
-\begin{frame}
-  \frametitle{After that, the flood$\ldots$}
-  High-throughput sequencing methods have completely changed the landscape of microbiology \\
-  \textbf{(Nearly) complete, (mainly) accurate sequence data is now inexpensive} (and cheaper than analysis)
-  \begin{itemize}
-    \item \href{http://www.genomesonline.org/cgi-bin/GOLD/index.cgi?page_requested=Complete+Genome+Projects&subset_requested=Complete+And+Published}{GOLD} (19/2/2014): 3,011 ``finished'' ; 9,891 ``permanent draft'' genomes
-    \item \href{http://www.genomesonline.org/cgi-bin/GOLD/index.cgi?page_requested=Complete+Genome+Projects&subset_requested=Complete+And+Published}{GOLD} (18/11/2014): 6,649 ``finished'' ; 23,552 ``permanent draft'' genomes    
-    \item \href{http://www.ncbi.nlm.nih.gov/Traces/wgs/}{NCBI WGS} (19/2/2014): 17,023 microbial genomes
-    \item \href{http://www.ncbi.nlm.nih.gov/Traces/wgs/}{NCBI WGS} (18/11/2014): 26,026 microbial genomes
-  \end{itemize}
-\end{frame}
-
-% And how many are we going to have?
+% How many are we going to have?
 \begin{frame}
   \frametitle{Predicting the future is hard$\ldots$}
+    ``How many genomes will we have, and when?'' \\
     Su \textit{et al}. attempted to answer this\footnote{\tiny{\href{http://sulab.org/2013/06/sequenced-genomes-per-year/}{http://sulab.org/2013/06/sequenced-genomes-per-year/}}}:
     \begin{center}
       \includegraphics[width=0.5\textwidth]{images/cumulative_sequenced_genomes1}
       \includegraphics[width=0.5\textwidth]{images/cumulative_sequenced_genomes2}
     \end{center}     
 %    How will we keep this much genomic data well-organised?
+\end{frame}
+
+% But how many genomes do we have, now?
+\begin{frame}
+  \frametitle{After that, the flood$\ldots$}
+  High-throughput sequencing methods have completely changed the landscape of microbiology \\
+  \textbf{(Nearly) complete, (mainly) accurate sequence data is now inexpensive} (and cheaper than analysis)
+  \begin{itemize}
+    \item \href{http://www.genomesonline.org/cgi-bin/GOLD/index.cgi?page_requested=Complete+Genome+Projects&subset_requested=Complete+And+Published}{GOLD} (19/2/2014): 3,011 ``finished'' ; 9,891 ``permanent draft'' genomes
+    \item \href{http://www.genomesonline.org/cgi-bin/GOLD/index.cgi?page_requested=Complete+Genome+Projects&subset_requested=Complete+And+Published}{GOLD} (10/11/2015): 7,657 ``finished'' ; 27,438 ``permanent draft'' genomes; 50,673 prokaryotes
+    \item \href{http://www.ncbi.nlm.nih.gov/Traces/wgs/}{NCBI WGS} (19/2/2014): 17,023 microbial genomes
+    \item \href{http://www.ncbi.nlm.nih.gov/genome/browse/}{NCBI Genome} (10/11/2015): 55,033 prokaryotic genomes
+  \end{itemize}
 \end{frame}
 
 % A specific example: Pseudomonas
@@ -207,6 +260,7 @@
       \includegraphics[height=0.5\textheight]{images/pseud2011_abstract}
       \includegraphics[height=0.5\textheight]{images/pseud2015_genomecount}
     \end{center}     
+    We're going to need bigger bioinformatics$\ldots$
 %    How will we keep this much genomic data well-organised?
 \end{frame}
 
