@@ -152,7 +152,7 @@
       \includegraphics[width=1\textwidth]{images/ddh}
     \end{column}
   \end{columns}
-  Proxy for sequence similarity - replace with genome analysis\footnote{\tiny{\href{http://dx.doi.org/10.1186/1471-2180-12-302}{Chan \textit{et al} (2012) \textit{BMC Microbiol.} \textbf{12}:302 doi:10.1186/1471-2180-12-302}}}?
+Proxy for sequence similarity - replace with genome analysis\footnote{\tiny{\href{http://dx.doi.org/10.1186/1471-2180-12-302}{Chan \textit{et al} (2012) \textit{BMC Microbiol.} \textbf{12}:302 doi:10.1186/1471-2180-12-302}}}?
 \end{frame}
 
 % ANIb
@@ -221,9 +221,9 @@
   Practical applications\footnote{\tiny{\href{http://dx.doi.org/10.1099/ijs.0.052944-0}{van der Wolf \textit{et al}. (2014) \textit{Int. J. Syst. Evol. Micr.} \textbf{64}:768-774 doi:10.1099/ijs.0.052944-0}}} (note: no gene content used)\\[0.25cm]
   \begin{columns}[T]
     \begin{column}{5cm}
-    29 \textit{Dickeya} isolates:\\
+    34 \textit{Dickeya} isolates:\\
     species structure\\
-      \includegraphics[width=1\textwidth]{images/ANIm_Dickeya}
+      \includegraphics[width=1\textwidth]{images/Figure_2_figure_anim_pid_dickeya}
     \end{column}
     \begin{column}{5cm}
     180 \textit{E.coli} isolates:\\
@@ -375,4 +375,128 @@
   \begin{center}
     \includegraphics[width=0.75\textwidth]{images/coancestry}
   \end{center}     
+\end{frame}
+
+% I'm using the Quick et al. paper as a case study to illustrate the application
+% and utility of WGS leading to definite tangible conclusion, where we have some 
+% idea of effort and costs. It illustrates a number of issues that I'll go into more 
+% detail on later in the presentation.
+\subsection{Nosocomial P.aeruginosa acquisition}
+
+% The case study has circumstances that should be immediately analogous to our
+%    situation with zoonoses, but detached enough that people won't get bogged
+%    down in details they might think they know.
+% In particular, it's a practical example of source tracking using WGS, and shows the scale
+%    of sampling and effort required to get a result.
+% 1) Motivation: there's an urgent concern about contamination leading to disease.
+%    the motivating case is contamination in a Welsh neonatal unit, but the problem is
+%    widespread.
+% 2) Setup: patients were screened in the same way animals might be screened - but only 30,
+%    here. Both the patients and the environment (water sources and hard surfaces)
+%    were sampled: more samples than sequence isolates! Every isolate they found was 
+%    sequenced.
+% 3) Outcome: the main outcome was evolutionary relationships between isolates, which
+%    confirmed what might be suspected from common sense. There was a single dominant
+%    'hospital clade', isolates from this clade differed by location, and patients who
+%    acquired P.aeruginosa did so from their local environment.
+\begin{frame}
+  \frametitle{\textit{P.aeruginosa} nosocomial acquisition\footnote{\tiny{Quick \textit{et al}. (2014) \textit{BMJ Open} \textbf{4}: e006278. \href{http://dx.doi.org/10.1136/bmjopen-2014-006278}{doi:10.1136/bmjopen-2014-006278}}\\}}
+  \textbf{Motivation} \\
+  Nosocomial water transmission of \textit{P.aeruginosa} an urgent concern \\
+  \textbf{Setup} \\
+  Burns patients (30) screened for \textit{P.aeruginosa} on admission \\
+  Samples taken from patients and environment \\
+  All \textit{P.aeruginosa} isolates (141) WGS sequenced \\
+  \textbf{Outcome} \\  
+%  Eight distinct clades; single clade dominated environmental isolates \\
+  Clustering of isolates by room and outlet \\
+  Three patient isolates identical to water isolates from same room \\
+  Biofilm from thermostatic mixer valve a possible source \\
+\end{frame}
+
+% This slide illustrates the sampling undertaken to collect isolates for sequencing.
+% The x-axis from left to right indicates time: 0 days to around 300 days.
+% The y-axis up-and-down indicates location in the hospital: which room each patient was in
+%     (patients were sometimes moved between rooms).
+% Patients are indicated by little stick figures.
+% Bacterial isolates are indicated by coloured circles: red from the patient's wounds, blue
+%     from water, green from wet/dry surfaces.
+% We can see that patients in one particular room (11) acquired bacteria; that P.aeruginosa 
+%     occurs in several locations, and that it's mostly from one clade (E). 
+% In total, 282 water and environmental samples and 78 patient samples (360 all together)
+%     were screened. 
+\begin{frame}
+  \frametitle{\textit{P.aeruginosa} nosocomial acquisition\footnote{\tiny{Quick \textit{et al}. (2014) \textit{BMJ Open} \textbf{4}: e006278. \href{http://dx.doi.org/10.1136/bmjopen-2014-006278}{doi:10.1136/bmjopen-2014-006278}}\\}}
+  \begin{center}
+    \includegraphics[width=1\textwidth]{images/quick_fig2}
+  \end{center}
+\end{frame}
+
+% The methods used in this study will be similar to those that would be useful in a 
+%     zoonotic context. The important thing is that they represent the general kind of
+%     action that needs to be taken, and that a choice has been made of which software/
+%     algorithm to use. These choices may be different from study to study and, while the
+%     the same road conclusion is likely to be reached, the details of the answer will 
+%     differ.
+\begin{frame}
+  \frametitle{\textit{P.aeruginosa} nosocomial acquisition\footnote{\tiny{Quick \textit{et al}. (2014) \textit{BMJ Open} \textbf{4}: e006278. \href{http://dx.doi.org/10.1136/bmjopen-2014-006278}{doi:10.1136/bmjopen-2014-006278}}\\}}
+  \textbf{Methods} \\
+  \begin{itemize}
+    \item \textbf{\textit{Illumina MiSeq}} WGS of 141 isolates \\
+    \item Metagenomic sequencing of biofilm \\    
+    \item \textbf{\textit{Simulated sequencing}} of 55 published \textit{P. aeruginosa} \\
+    \item \textbf{\textit{BWA}} mapping against \textbf{\textit{PAO1 reference genome}} \\
+    \item SNPs called with \textbf{\textit{SAMtools}} \& \textbf{\textit{VarScan}} \\
+    \item \textbf{\textit{ML reconstruction}} with \textbf{\textit{FastTree}} \\
+    \item \textit{De novo} assembly with \textbf{\textit{Velvet}} for MLST prediction \\
+  \end{itemize}
+  Sequences and bioinformatic methods shared online: \href{http://www.github.com/joshquick/snp_calling_scripts}{http://www.github.com/joshquick/snp\_calling\_scripts} \\
+\end{frame}
+
+% The key output was high-resolution phylogenetic reconstruction from a small 
+%     number of SNPs/indels.
+% Important to note that the branch length scale indicates differences on the single
+%     SNP/indel level: 1/4,000,000th of the genome difference.
+% A single clade implicates room 11, indicating presence in the  water source (blue), 
+%     with acquisition by two different patients, over a period of time, in the same 
+%     location.
+% This is very high-resolution tracking of bacterial genome differences.
+\begin{frame}
+  \frametitle{\textit{P.aeruginosa} nosocomial acquisition\footnote{\tiny{Quick \textit{et al}. (2014) \textit{BMJ Open} \textbf{4}: e006278. \href{http://dx.doi.org/10.1136/bmjopen-2014-006278}{doi:10.1136/bmjopen-2014-006278}}\\}}
+  \begin{center}
+    \includegraphics[width=0.55\textwidth]{images/quick_fig3}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{\textit{P.aeruginosa} nosocomial acquisition\footnote{\tiny{Quick \textit{et al}. (2014) \textit{BMJ Open} \textbf{4}: e006278. \href{http://dx.doi.org/10.1136/bmjopen-2014-006278}{doi:10.1136/bmjopen-2014-006278}}\\}}
+  \begin{center}
+    \includegraphics[width=0.65\textwidth]{images/quick_fig3_zoom}
+  \end{center}
+\end{frame}
+
+% The results show that WGS is usable to track infectious bacteria at very
+%       high resolution, and able to provide evidence supporting routes of 
+%       transmission and transfer.
+% There are some limitations to the study, however: the sample size here is 
+%       small, and geographically restricted. That makes the study tractable in 
+%       terms of sequencing data and downstream analysis.
+%       The causal inferences in this study may not be entirely applicable in
+%       other circumstances.
+%       This is an observational study that took around a year to sample - it is
+%       not a real-time responsive analysis in the midst of a crisis.
+%       The bacterium studied here has a very good set of reference sequences
+%       available, which makes things easier. That may not always be true.
+\begin{frame}
+  \frametitle{\textit{P.aeruginosa} nosocomial acquisition\footnote{\tiny{Quick \textit{et al}. (2014) \textit{BMJ Open} \textbf{4}: e006278. \href{http://dx.doi.org/10.1136/bmjopen-2014-006278}{doi:10.1136/bmjopen-2014-006278}}\\}}
+  \textbf{Strengths} \\
+  A \textit{P. aeruginosa} source could be tracked by WGS \\
+  Insights into transmission: water to patient a likely route \\
+  Sensitivity - identifies microevolution \\
+  \textbf{Limitations} \\
+  Small sample size: 5/30 patients infected, gave 55/141 isolates  \\
+  Not clear that causal inferences are general \\
+  300-day sampling, not real-time crisis analysis \\
+  Good existing reference genome set for this bacterium \\
+  Sequencing cost: $\approx$\pounds8k; Staff cost: $\approx$\pounds15k
 \end{frame}
