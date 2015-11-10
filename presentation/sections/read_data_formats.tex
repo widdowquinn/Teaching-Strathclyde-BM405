@@ -21,6 +21,9 @@
   \begin{itemize}
     \item \textbf{FASTQ}: Related to FASTA, a \textit{de facto} standard for sequence reads
     \item \textbf{SAM/BAM}: Sequence alignment/mapping format, two flavours - uncompressed and compressed
+  \end{itemize}
+  New formats are required to handle very large numbers of genomes
+  \begin{itemize}
     \item \textbf{CRAM}: Reference-based sequence compression
   \end{itemize}
   You might also receive assembled genomes directly from a sequencing partner
@@ -85,7 +88,8 @@ CGGTCTTGGGATAGATGGGTTGCAGGTTGCGGTAAAGCTCGGACTCCAGAGCGTCCAGGGTAGACTGGCTAATCTTCTGC
 % FASTQ data format
 \begin{frame}[fragile]
   \frametitle{FASTQ encoding\footnote{\tiny{\href{http://dx.doi.org/10.1093/nar/gkp1137}{Cock \textit{et al}. (2009) \textit{Bioinformatics} \textbf{38}:1767-1771 doi:10.1093/nar/gkp1137}}}}
-  Versions vary by sequencer and period. Most now settled on Sanger format. \\
+  Versions vary by sequencer and period. \\
+  Most now settled on Sanger format (occasionally see historical data). \\
   Quality scores ($Q_{phred}$) offset to lie in the given range:
   \begin{enumerate}
     \item \textbf{Sanger}: 33-126, used in SAM/BAM, and Illumina 1.8+
@@ -137,7 +141,7 @@ CGGTCTTGGGATAGATGGGTTGCAGGTTGCGGTAAAGCTCGGACTCCAGAGCGTCCAGGGTAGACTGGCTAATCTTCTGC
 \begin{frame}[fragile]
   \frametitle{Read repositories}
   Repositories are centrally-maintained locations that keep sequence read data from multiple projects\\
-  Submission to a repository is a requirement for publication.
+  Submission to a repository is a requirement for publication. And the right thing to do!
     \begin{itemize}
     \item \textbf{ENA}: The European Nucleotide Archive (\href{http://www.ebi.ac.uk/ena}{http://www.ebi.ac.uk/ena}), maintained by EBI/EMBL
     \item \textbf{SRA}: The Short Read Archive (\href{http://www.ncbi.nlm.nih.gov/sra}{http://www.ncbi.nlm.nih.gov/sra}), maintained in the US by NCBI
